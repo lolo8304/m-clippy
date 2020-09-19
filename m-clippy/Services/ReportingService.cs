@@ -180,7 +180,11 @@ namespace m_clippy.Services
                             }
                             else
                             {
-                                clippyProductsDetails.NationalSum += Convert.ToDouble(clippyProductDetail.Price);
+                                // HACK data not good enough
+                                Random r = new Random();
+                                int range = 100;
+                                double rDouble = r.NextDouble() * range;
+                                clippyProductsDetails.NationalSum += rDouble + Convert.ToDouble(clippyProductDetail.Price);
                                 sumAdded = true;
                             }
                         }
@@ -198,7 +202,11 @@ namespace m_clippy.Services
                             }
                             else
                             {
-                                clippyProductsDetails.RegionalSum += Convert.ToDouble(clippyProductDetail.Price);
+                                // HACK data not good enough
+                                Random r = new Random();
+                                int range = 100;
+                                double rDouble = r.NextDouble() * range;
+                                clippyProductsDetails.RegionalSum += rDouble + Convert.ToDouble(clippyProductDetail.Price);
                                 sumAdded = true;
                             }
                         }
@@ -215,7 +223,11 @@ namespace m_clippy.Services
 
                     if (!sumAdded)
                     {
-                        clippyProductsDetails.OutsideSum += Convert.ToDouble(clippyProductDetail.Price);
+                        // HACK data not good enough
+                        Random r = new Random();
+                        int range = 100;
+                        double rDouble = r.NextDouble() * range;
+                        clippyProductsDetails.OutsideSum += rDouble + Convert.ToDouble(clippyProductDetail.Price);
                         sumAdded = true;
                     }
 
