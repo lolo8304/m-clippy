@@ -8,7 +8,7 @@ namespace m_clippy.Models
     {
         public string Thumbnail { get; set; }
         public string Image { get; set; }
-        public string Price { get; set; }
+        public double Price { get; set; }
         public string Quantity { get; set; }
 
         public string ArticleID { get; set; }

@@ -21,7 +21,7 @@ namespace m_clippy.Models
                 Points = "9167",
                 ClientId = "102531",
 
-                Configured = false,
+                Configured = true,
 
                 Alerts = new Alerts()
             };

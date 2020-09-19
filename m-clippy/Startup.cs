@@ -35,10 +35,11 @@ namespace m_clippy
             //services.AddSingleton<AdapterWithErrorHandler>();
             services.AddSingleton<ClippyStorage>();
             services.AddSingleton<MigrosService>();
+            services.AddSingleton<AllergyService>();
+            services.AddSingleton<ReportingService>();
 
             // transient, on request
             //services.AddTransient<IBot, EchoBot>();
-
 
 
             // One important note is that this approach will not work with a policy that handles FlurlHttpException.

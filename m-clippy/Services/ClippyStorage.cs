@@ -7,7 +7,12 @@ namespace m_clippy.Services
 {
     public class ClippyStorage
     {
+        // Caching because of bad endpoint performances, better would be client side cacing or precalculation in backend
         public readonly ConcurrentDictionary<string, User> User = new ConcurrentDictionary<string, User>();
+
+        // Caching because of bad endpoint performances, better would be client side cacing or precalculation in backend
+        public readonly ConcurrentDictionary<string, ClippyProductsDetails> ClippyProductsDetails = new ConcurrentDictionary<string, ClippyProductsDetails>();
+
         public string Allergies;
 
         public ClippyStorage(ILogger<ClippyStorage> logger)
@@ -19,6 +24,23 @@ namespace m_clippy.Services
             return (User.TryGetValue(userId, out var value)) ? value : null;
         }
 
+        public User PutUser(string key, User value)
+        {
+            User.AddOrUpdate(key, value, (key, old) => { return value; });
+            return User.AddOrUpdate(key, value, (key, old) => value);
+        }
+
+        public ClippyProductsDetails GetClippyProductDetails(string userId)
+        {
+            return (ClippyProductsDetails.TryGetValue(userId, out var value)) ? value : null;
+        }
+
+        public ClippyProductsDetails PutClippyProductDetails(string key, ClippyProductsDetails value)
+        {
+            ClippyProductsDetails.AddOrUpdate(key, value, (key, old) => { return value; });
+            return ClippyProductsDetails.AddOrUpdate(key, value, (key, old) => value);
+        }
+
         public string GetAllergies()
         {
             return Allergies;
@@ -27,12 +49,6 @@ namespace m_clippy.Services
         public void PutAllergies(string allergies)
         {
             Allergies = allergies;
-        }
-
-        public User PutUser(string key, User value)
-        {
-            User.AddOrUpdate(key, value, (key, old) => { return value; });
-            return User.AddOrUpdate(key, value, (key, old) => value);
         }
 
     }
