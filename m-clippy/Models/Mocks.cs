@@ -39,7 +39,7 @@ namespace m_clippy.Models
             };
 
 
-            user.Location = new Location
+            user.Locations = new Location
             {
                 Exclusion1 = "China",
                 Exclusion2 = null,

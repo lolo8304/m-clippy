@@ -14,7 +14,7 @@ namespace m_clippy.Models
         public bool Configured { get; set; }
 
         public Habits Habits { get; set; }
-        public Location Location { get; set; }
+        public Location Locations { get; set; }
         public Allergies Allergies { get; set; }
         public Alerts Alerts { get; set; }
 
