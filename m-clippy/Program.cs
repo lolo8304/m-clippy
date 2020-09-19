@@ -18,9 +18,15 @@ namespace m_clippy
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+            .ConfigureAppConfiguration(ConfigurationLocalSettings)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
+        private static void ConfigurationLocalSettings(HostBuilderContext hostBuilderContext, IConfigurationBuilder configurationBuilder)
+        {
+            configurationBuilder.AddJsonFile("local.settings.json", false, true);
+        }
     }
 }

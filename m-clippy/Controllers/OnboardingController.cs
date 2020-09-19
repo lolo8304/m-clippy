@@ -7,6 +7,7 @@ using m_clippy.Models;
 using m_clippy.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -21,10 +22,12 @@ namespace m_clippy.Controllers
     public class OnboardingController : ControllerBase
     {
         private readonly ClippyStorage _clippyStorage;
+        private readonly MigrosService _migrosService;
 
-        public OnboardingController(ClippyStorage clippyStorage)
+        public OnboardingController(ClippyStorage clippyStorage, MigrosService migrosService)
         {
             _clippyStorage = clippyStorage;
+            _migrosService = migrosService;
         }
 
         [HttpGet]
@@ -45,6 +48,20 @@ namespace m_clippy.Controllers
             };
         }
 
+        [HttpGet]
+        [Route("products/{productId}")]
+        public async Task<IActionResult> GetProductByIdAsync(string productId)
+        {
+            if (string.IsNullOrWhiteSpace(productId))
+            {
+                return BadRequest(new Error($"{StatusCodes.Status400BadRequest}", $"'{nameof(productId)}' cannot be null or whitespace"));
+            }
+            var product = await _migrosService.GetProductByIdAsync(productId);
+            var productString = JsonConvert.SerializeObject(product);
+            Response.StatusCode = (int)HttpStatusCode.OK;
+            return Content(productString, "application/json");
+        }
+
         [HttpPut]
         [Route("users/{userId}/habits")]
         public IActionResult GetHabitsByUserId(string userId, [FromBody] Habits habits)
@@ -56,7 +73,6 @@ namespace m_clippy.Controllers
             _clippyStorage.PutHabits(userId, habits);
             return Ok();
         }
-
 
         public string ObjectToString(Habits habits)
         {

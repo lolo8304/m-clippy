@@ -51,7 +51,8 @@ namespace m_clippy.Models.Migros
         public List<Category> Categories;
 
         [JsonProperty("additional_categories")]
-        public List<Category> AdditionalCategories;
+        [JsonIgnore]
+        public List<List<Category>> AdditionalCategories;
 
         [JsonProperty("nutrition_facts")]
         public NutritionFacts NutritionFacts;

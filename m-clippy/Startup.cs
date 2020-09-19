@@ -31,6 +31,7 @@ namespace m_clippy
             // concrete class as startup
             //services.AddSingleton<AdapterWithErrorHandler>();
             services.AddSingleton<ClippyStorage>();
+            services.AddSingleton<MigrosService>();
 
             // transient, on request
             //services.AddTransient<IBot, EchoBot>();
