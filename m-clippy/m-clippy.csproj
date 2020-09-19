@@ -13,6 +13,7 @@
   <ItemGroup>
     <Folder Include="Services\" />
     <Folder Include="Models\Migros\" />
+    <Folder Include="Models\Allergens\" />
   </ItemGroup>
   <ItemGroup>
     <Content Update="Properties\MetaData.json">

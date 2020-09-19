@@ -1,17 +1,17 @@
 {
 	"info": {
-		"_postman_id": "a0e048fd-faf1-417b-b053-312ef0427930",
+		"_postman_id": "7b33a70c-4877-4e66-87a6-dfdde0d12e6c",
 		"name": "m-clippy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Get Habits",
+			"name": "Get User by Id",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{URL}}/api/onboarding/users/{{UserId}}/habits",
+					"raw": "{{URL}}/api/onboarding/users/{{UserId}}",
 					"host": [
 						"{{URL}}"
 					],
@@ -19,8 +19,26 @@
 						"api",
 						"onboarding",
 						"users",
-						"{{UserId}}",
-						"habits"
+						"{{UserId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Metadata Allergens",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/api/metadata/allergens",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"metadata",
+						"allergens"
 					]
 				}
 			},
@@ -81,7 +99,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "f2fda25f-b311-44c8-b6ca-04b9685b531c",
+				"id": "7ec342e0-3502-45e7-ad67-e91f303cc467",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -91,7 +109,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "cb3d20ee-e2bc-4ab7-a395-29773711da3e",
+				"id": "6bce7f37-587a-4a94-b07b-4c6c2a634adc",
 				"type": "text/javascript",
 				"exec": [
 					""

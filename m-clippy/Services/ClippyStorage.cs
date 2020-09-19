@@ -8,7 +8,7 @@ namespace m_clippy.Services
     public class ClippyStorage
     {
         public readonly ConcurrentDictionary<string, User> User = new ConcurrentDictionary<string, User>();
-    
+        public string Allergies;
 
         public ClippyStorage(ILogger<ClippyStorage> logger)
         {
@@ -17,6 +17,16 @@ namespace m_clippy.Services
         public User GetUser(string userId)
         {
             return (User.TryGetValue(userId, out var value)) ? value : null;
+        }
+
+        public string GetAllergies()
+        {
+            return Allergies;
+        }
+
+        public void PutAllergies(string allergies)
+        {
+            Allergies = allergies;
         }
 
         public User PutUser(string key, User value)

@@ -13,7 +13,7 @@ namespace m_clippy.Models
             var user = new User
             {
                 Id = "b6adb9a1-9f93-49b9-8793-d6f91d44e4a3",
-                Name = "Frans Muster",
+                Name = "Franziska Muster",
                 Cumulus = "2345 56789 34567",
                 Points = "9167",
                 ClientId = "102531",
