@@ -7,21 +7,22 @@ namespace m_clippy.Services
 {
     public class ClippyStorage
     {
-        public readonly ConcurrentDictionary<string, Habits> Habits = new ConcurrentDictionary<string, Habits>();
+        public readonly ConcurrentDictionary<string, User> User = new ConcurrentDictionary<string, User>();
+    
 
         public ClippyStorage(ILogger<ClippyStorage> logger)
         {
         }
 
-        public Habits GetHabit(string userId)
+        public User GetUser(string userId)
         {
-            return (Habits.TryGetValue(userId, out var value)) ? value : null;
+            return (User.TryGetValue(userId, out var value)) ? value : null;
         }
 
-        public Habits PutHabits(string key, Habits value)
+        public User PutUser(string key, User value)
         {
-            Habits.AddOrUpdate(key, value, (key, old) => { return value; });
-            return Habits.AddOrUpdate(key, value, (key, old) => value);
+            User.AddOrUpdate(key, value, (key, old) => { return value; });
+            return User.AddOrUpdate(key, value, (key, old) => value);
         }
 
     }

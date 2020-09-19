@@ -31,17 +31,22 @@ namespace m_clippy.Controllers
         }
 
         [HttpGet]
-        [Route("users/{userId}/habits")]
-        public IActionResult GetHabitsByUserId(string userId)
+        [Route("users/{userId}")]
+        public IActionResult GetByUserId(string userId)
         {
             if (string.IsNullOrWhiteSpace(userId))
             {
                 return BadRequest(new Error($"{StatusCodes.Status400BadRequest}", $"'{nameof(userId)}' cannot be null or whitespace"));
             }
-            var habit = _clippyStorage.GetHabit(userId);
-            if (habit == null) habit = _clippyStorage.PutHabits(userId, new Habits());
+            var user = _clippyStorage.GetUser(userId);
 
-            return new JsonResult(habit)
+            if (user == null)
+            {
+                user = new Mocks().User1();
+                user = _clippyStorage.PutUser(userId, user);
+            }
+
+            return new JsonResult(user)
             {
                 ContentType = "application/json",
                 StatusCode = (int)HttpStatusCode.OK
@@ -63,14 +68,14 @@ namespace m_clippy.Controllers
         }
 
         [HttpPut]
-        [Route("users/{userId}/habits")]
-        public IActionResult GetHabitsByUserId(string userId, [FromBody] Habits habits)
+        [Route("users/{userId}")]
+        public IActionResult GetHabitsByUserId(string userId, [FromBody] User user)
         {
             if (string.IsNullOrWhiteSpace(userId))
             {
                 return BadRequest(new Error($"{StatusCodes.Status400BadRequest}", $"'{nameof(userId)}' cannot be null or whitespace"));
             }
-            _clippyStorage.PutHabits(userId, habits);
+            _clippyStorage.PutUser(userId, user);
             return Ok();
         }
 
