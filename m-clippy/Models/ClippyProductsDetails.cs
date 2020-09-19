@@ -17,6 +17,9 @@ namespace m_clippy.Models
 
 
         public int CountriesCounter { get; set; }
+        public string PlanesKm { get; set; }
+        public string CarKm { get; set; }
+
 
         public double NationalSum { get; set; }
         public double RegionalSum { get; set; }

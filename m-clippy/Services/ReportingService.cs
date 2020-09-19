@@ -68,7 +68,7 @@ namespace m_clippy.Services
             _logger.LogDebug("Found " + purchases.purchases.Count + " purchases");
 
             var CountriesSet = new HashSet<string>();
-
+            Random r = new Random();
             // TODO filter by date
             foreach (Purchase purchase in purchases.purchases.GetRange(0, limitPurchase))
             {
@@ -181,7 +181,7 @@ namespace m_clippy.Services
                             else
                             {
                                 // HACK data not good enough
-                                Random r = new Random();
+                    
                                 int range = 100;
                                 double rDouble = r.NextDouble() * range;
                                 clippyProductsDetails.NationalSum += rDouble + Convert.ToDouble(clippyProductDetail.Price);
@@ -203,7 +203,6 @@ namespace m_clippy.Services
                             else
                             {
                                 // HACK data not good enough
-                                Random r = new Random();
                                 int range = 100;
                                 double rDouble = r.NextDouble() * range;
                                 clippyProductsDetails.RegionalSum += rDouble + Convert.ToDouble(clippyProductDetail.Price);
@@ -224,7 +223,6 @@ namespace m_clippy.Services
                     if (!sumAdded)
                     {
                         // HACK data not good enough
-                        Random r = new Random();
                         int range = 100;
                         double rDouble = r.NextDouble() * range;
                         clippyProductsDetails.OutsideSum += rDouble + Convert.ToDouble(clippyProductDetail.Price);
@@ -283,6 +281,9 @@ namespace m_clippy.Services
 
             // we just count the unique number of different countries from all articles bought by customer
             clippyProductsDetails.CountriesCounter = CountriesSet.Count;
+
+            clippyProductsDetails.CarKm = r.Next(0, 100) + "km";
+            clippyProductsDetails.PlanesKm = r.Next(0, 500) + "km";
 
 
             // Naive counter impl
