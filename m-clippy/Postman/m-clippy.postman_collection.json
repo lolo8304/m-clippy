@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "a0e048fd-faf1-417b-b053-312ef0427930",
+		"name": "m-clippy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Habits",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/api/onboarding/users/{{UserId}}/habits",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"onboarding",
+						"users",
+						"{{UserId}}",
+						"habits"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/api/onboarding/products/100110000000.json",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"onboarding",
+						"products",
+						"100110000000.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Habit",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bio\": true,\n    \"vegetarian\": false,\n    \"vegan\": false,\n    \"casher\": false,\n    \"halal\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/onboarding/users/{{UserId}}/habits",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"onboarding",
+						"users",
+						"{{UserId}}",
+						"habits"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "f2fda25f-b311-44c8-b6ca-04b9685b531c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "cb3d20ee-e2bc-4ab7-a395-29773711da3e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "3a960825-0c4c-46d1-b2ea-e3d639cdd200",
+			"key": "UserId",
+			"value": "51c7d9ed-ba46-4e0e-ba3a-6049d64f3771"
+		},
+		{
+			"id": "2a0956a7-8474-4473-bfc3-9a7fa5d53b00",
+			"key": "URL",
+			"value": "https://localhost:5001"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
