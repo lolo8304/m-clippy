@@ -18,18 +18,30 @@ namespace m_clippy.Services
     {
         private readonly IConfiguration _configuration;
         private readonly ClippyStorage _clippyStorage;
-        private ILogger<MigrosService> _logger;
+        private readonly MigrosService _migrosService;
 
-        public ReportingService(ClippyStorage clippyStorage, IConfiguration configuration, ILogger<MigrosService> logger)
+        private ILogger<ReportingService> _logger;
+
+        public ReportingService(ClippyStorage clippyStorage,
+            MigrosService migrosService,
+            IConfiguration configuration,
+            ILogger<ReportingService> logger)
         {
             _configuration = configuration;
             _clippyStorage = clippyStorage;
+            _migrosService = migrosService;
             _logger = logger;
         }
 
         public async Task<ClippyProductsDetails> getPurchases(string userId)
         {
             var user = _clippyStorage.GetUser(userId);
+            if (user == null)
+            {
+                user = new Mocks().User1();
+                user = _clippyStorage.PutUser(userId, user);
+            }
+
             string clientId = user.ClientId;
 
 
