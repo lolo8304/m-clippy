@@ -67,6 +67,20 @@ namespace m_clippy.Controllers
             return Content(productString, "application/json");
         }
 
+        [HttpGet]
+        [Route("purchases/{userId}")]
+        public async Task<IActionResult> GetPurchase(string userId)
+        {
+            if (string.IsNullOrWhiteSpace(userId))
+            {
+                return BadRequest(new Error($"{StatusCodes.Status400BadRequest}", $"'{nameof(userId)}' cannot be null or whitespace"));
+            }
+            var clippyProductsDetails = await _migrosService.getPurchases(userId);
+            var clippyProductsDetailsString = JsonConvert.SerializeObject(clippyProductsDetails);
+            Response.StatusCode = (int)HttpStatusCode.OK;
+            return Content(clippyProductsDetailsString, "application/json");
+        }
+
         [HttpPut]
         [Route("users/{userId}")]
         public IActionResult GetHabitsByUserId(string userId, [FromBody] User user)

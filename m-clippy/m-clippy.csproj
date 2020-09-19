@@ -14,6 +14,9 @@
     <Folder Include="Services\" />
     <Folder Include="Models\Migros\" />
     <Folder Include="Models\Allergens\" />
+    <Folder Include="Models\Purchase\" />
+    <Folder Include="Models\Cart\" />
+    <Folder Include="Models\ProductsDetails\" />
   </ItemGroup>
   <ItemGroup>
     <Content Update="Properties\MetaData.json">

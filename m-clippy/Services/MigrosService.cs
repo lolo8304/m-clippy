@@ -3,7 +3,10 @@ using System.Threading.Tasks;
 using Flurl.Http;
 using m_clippy.Models;
 using m_clippy.Models.Allergens;
+using m_clippy.Models.Cart;
 using m_clippy.Models.Migros;
+using m_clippy.Models.ProductDetails;
+using m_clippy.Models.Purchases;
 using Microsoft.Extensions.Configuration;
 
 namespace m_clippy.Services
@@ -11,10 +14,91 @@ namespace m_clippy.Services
     public class MigrosService
     {
         private readonly IConfiguration _configuration;
+        private readonly ClippyStorage _clippyStorage;
 
-        public MigrosService(IConfiguration configuration)
+        public MigrosService(ClippyStorage clippyStorage, IConfiguration configuration)
         {
             _configuration = configuration;
+            _clippyStorage = clippyStorage;
+        }
+
+        public async Task<ClippyProductsDetails> getPurchases(string userId)
+        {
+            var user = _clippyStorage.GetUser(userId);
+            string clientId = user.ClientId;
+
+            var u = _configuration["MigrosApiUsername"];
+            var p = _configuration["MigrosApiPassword"];
+            var purchases = await $"https://hackzurich-api.migros.ch/hack/purchase/{clientId}"
+                .WithHeader("Api-Version", "7")
+                .WithHeader("accept-language", "de")
+                .WithBasicAuth(u, p)
+                .GetJsonAsync<Purchases>();
+
+            // we map to our own structure
+            var clippyProductsDetails = new ClippyProductsDetails();
+
+            // TODO filter by date
+            foreach (Purchase purchase in purchases.purchases)
+            {
+                var einkaufID = purchase.EinkaufID;
+
+                var cart = await $"https://hackzurich-api.migros.ch/hack/purchase/{clientId}/{einkaufID}/articles"
+                .WithHeader("Api-Version", "7")
+                .WithHeader("accept-language", "de")
+                .WithBasicAuth(u, p)
+                .GetJsonAsync<Cart>();
+
+                var productIds = "";
+                foreach (CartItem cartItem in cart.cartItems)
+                {
+                    string articleId = cartItem.ArtikelID.ToString();
+
+                    productIds = $"{productIds},{articleId}";
+                }
+
+                var productDetails = await $"https://hackzurich-api.migros.ch/products.json?ids={productIds}"
+                                .WithHeader("Api-Version", "7")
+                                .WithHeader("accept-language", "de")
+                                .WithBasicAuth(u, p)
+                                .GetJsonAsync<ProductDetails>();
+
+                foreach (ProductDetail product in productDetails.Products)
+                {
+                    var clippyProductDetail = new ClippyProductDetail();
+
+                    clippyProductDetail.Thumbnail = product.ImageTransparent.Stack.ToString().Replace("{stack}", "small");
+                    clippyProductDetail.Image = product.ImageTransparent.Stack.ToString().Replace("{stack}", "medium");
+
+                    // TODO should be historical to shoppingcart date :-)
+                    clippyProductDetail.Price = product.Price.Base.Price.ToString();
+                    clippyProductDetail.Quantity = product.Price.Base.Quantity.ToString() + product.Price.Base.Unit.ToString();
+
+                    // if it match user settings
+                    var allAllergens = product.Features.FindAll(s => s.LabelCode.Equals("MAPI_ALLERGENES"));
+                    foreach (Models.ProductDetails.Feature allergen in allAllergens)
+                    {
+                        foreach (Value value in allergen.Values) {
+                            if (user.Allergies.Matching.Contains(value.ValueCode.ToString())) {
+                                clippyProductDetail.AllergyAlert = true;
+
+                                clippyProductsDetails.AllergyCounter++;
+                            }
+                        }
+                    }
+                    
+                    // not always defined nor available
+                    clippyProductDetail.LocationAlert = true;
+
+
+                    clippyProductDetail.HabitsAlert = true;
+
+
+                    clippyProductsDetails.list.Add(clippyProductDetail);
+                }
+            }
+
+            return clippyProductsDetails;
         }
 
         public async Task<AllergenList> GetAllergiesAsync()
