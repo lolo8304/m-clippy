@@ -14,4 +14,11 @@
     <Folder Include="Services\" />
     <Folder Include="Models\Migros\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Update="Properties\MetaData.json">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
 </Project>

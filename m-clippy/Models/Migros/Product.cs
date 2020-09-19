@@ -64,7 +64,7 @@ namespace m_clippy.Models.Migros
         public List<Allergen> Allergens;
 
         [JsonProperty("image")]
-        public Image4 Image;
+        public Image Image;
 
         [JsonProperty("image_transparent")]
         public ImageTransparent ImageTransparent;
@@ -79,7 +79,7 @@ namespace m_clippy.Models.Migros
         public string RegulatedDescription;
 
         [JsonProperty("links")]
-        public Links3 Links;
+        public Dictionary<string, Homepage> Links;
 
         [JsonProperty("regional_availability")]
         public RegionalAvailability RegionalAvailability;
@@ -182,19 +182,39 @@ namespace m_clippy.Models.Migros
         public bool Purchasable;
     }
 
-    public class Links
-    {
-        [JsonProperty("homepage")]
-        public Homepage Homepage;
-    }
 
     public class Image
     {
         [JsonProperty("original")]
         public string Original;
 
+        private String _stack;
         [JsonProperty("stack")]
-        public string Stack;
+        public string Stack {
+            get
+            {
+                return _stack;
+            }
+            set
+            {
+                _stack = null;
+                Small = value.Replace("{stack}", "small");
+                Medium = value.Replace("{stack}", "medium");
+            }
+        }
+
+
+        [JsonProperty("small")]
+        public string Small;
+        [JsonProperty("medium")]
+        public string Medium;
+
+        [JsonProperty("tags")]
+        public List<string> Tags;
+
+        [JsonProperty("source")]
+        public string Source;
+
     }
 
     public class Brand
@@ -209,19 +229,10 @@ namespace m_clippy.Models.Migros
         public string Slug;
 
         [JsonProperty("links")]
-        public Links Links;
+        public Dictionary<string,Homepage> Links;
 
         [JsonProperty("image")]
         public Image Image;
-    }
-
-    public class Image2
-    {
-        [JsonProperty("original")]
-        public string Original;
-
-        [JsonProperty("stack")]
-        public string Stack;
     }
 
     public class Homepage2
@@ -239,11 +250,6 @@ namespace m_clippy.Models.Migros
         public bool Purchasable;
     }
 
-    public class Links2
-    {
-        [JsonProperty("homepage")]
-        public Homepage2 Homepage;
-    }
 
     public class Label
     {
@@ -257,19 +263,10 @@ namespace m_clippy.Models.Migros
         public string Slug;
 
         [JsonProperty("image")]
-        public Image2 Image;
+        public Image Image;
 
         [JsonProperty("links")]
-        public Links2 Links;
-    }
-
-    public class Image3
-    {
-        [JsonProperty("original")]
-        public string Original;
-
-        [JsonProperty("stack")]
-        public string Stack;
+        public Dictionary<string, Homepage> Links;
     }
 
     public class Category
@@ -296,7 +293,7 @@ namespace m_clippy.Models.Migros
         public int Level;
 
         [JsonProperty("image")]
-        public Image3 Image;
+        public Image Image;
     }
 
     public class Nutrient
@@ -407,7 +404,7 @@ namespace m_clippy.Models.Migros
         public string Value;
 
         [JsonProperty("numeric_value")]
-        public int NumericValue;
+        public int? NumericValue;
 
         [JsonProperty("boolean_value")]
         public bool? BooleanValue;
@@ -446,34 +443,10 @@ namespace m_clippy.Models.Migros
         public string Contamination;
     }
 
-    public class Image4
+    public class ImageTransparent : Image
     {
-        [JsonProperty("original")]
-        public string Original;
-
-        [JsonProperty("stack")]
-        public string Stack;
-    }
-
-    public class ImageTransparent
-    {
-        [JsonProperty("original")]
-        public string Original;
-
-        [JsonProperty("stack")]
-        public string Stack;
-    }
-
-    public class Value2
-    {
-        [JsonProperty("value_code")]
-        public string ValueCode;
-
-        [JsonProperty("value")]
-        public string Value;
-
-        [JsonProperty("numeric_value")]
-        public int? NumericValue;
+        [JsonProperty("source")]
+        public string Source;
     }
 
     public class InternalFeature
@@ -485,7 +458,7 @@ namespace m_clippy.Models.Migros
         public string Label;
 
         [JsonProperty("values")]
-        public List<Value2> Values;
+        public List<ValueObject> Values;
 
         [JsonProperty("category_code")]
         public string CategoryCode;
@@ -558,18 +531,6 @@ namespace m_clippy.Models.Migros
 
         [JsonProperty("purchasable")]
         public bool Purchasable;
-    }
-
-    public class Links3
-    {
-        [JsonProperty("migros_ch")]
-        public MigrosCh MigrosCh;
-
-        [JsonProperty("migipedia")]
-        public Migipedia Migipedia;
-
-        [JsonProperty("leshop")]
-        public Leshop Leshop;
     }
 
     public class Gmaa
@@ -710,33 +671,6 @@ namespace m_clippy.Models.Migros
         public string DisplayQuantity;
     }
 
-    public class Image5
-    {
-        [JsonProperty("tags")]
-        public List<string> Tags;
-
-        [JsonProperty("original")]
-        public string Original;
-
-        [JsonProperty("source")]
-        public string Source;
-
-        [JsonProperty("stack")]
-        public string Stack;
-    }
-
-    public class ImageTransparent2
-    {
-        [JsonProperty("original")]
-        public string Original;
-
-        [JsonProperty("source")]
-        public string Source;
-
-        [JsonProperty("stack")]
-        public string Stack;
-    }
-
     public class Logo
     {
         [JsonProperty("original")]
@@ -800,10 +734,10 @@ namespace m_clippy.Models.Migros
         public string Cooperative;
 
         [JsonProperty("image")]
-        public Image5 Image;
+        public Image Image;
 
         [JsonProperty("image_transparent")]
-        public ImageTransparent2 ImageTransparent;
+        public ImageTransparent ImageTransparent;
 
         [JsonProperty("logo")]
         public Logo Logo;
