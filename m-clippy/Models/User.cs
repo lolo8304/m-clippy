@@ -3,7 +3,9 @@ namespace m_clippy.Models
 {
     public class User
     {
-        public string Name { get; set; }
+        public string LastName { get; set; }
+        public string FirstName { get; set; }
+
         public string Cumulus { get; set; }
         public string Points { get; set; }
         public string Id { get; set; }
