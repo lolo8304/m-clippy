@@ -151,7 +151,13 @@ namespace m_clippy.Services
                             int previousValue = clippyProductsDetails.allergens.GetValueOrDefault(allergen, 0);
                             clippyProductsDetails.allergens.Remove(allergen);
                             clippyProductsDetails.allergens.Add(allergen, previousValue++);
+
+                            clippyProductsDetails.AllergensCounter++;
                         }
+                    }
+
+                    if (productAllergens.Count == 0) {
+                        clippyProductsDetails.NoAllergensCounter++;
                     }
 
                     bool sumAdded = false;
@@ -238,6 +244,11 @@ namespace m_clippy.Services
                             {
                                 clippyProductDetail.HabitsAlert = true;
                                 clippyProductsDetails.HabitsCounter++;
+
+                                clippyProductsDetails.NotVeganCounter++;
+                            }
+                            else {
+                                clippyProductsDetails.VeganCounter++;
                             }
 
                             List<Models.ProductDetails.Label2> isVeganBlume = productDetail?.Labels.FindAll(s => s.Name.Equals("Veganblume"));
@@ -245,6 +256,12 @@ namespace m_clippy.Services
                             {
                                 clippyProductDetail.HabitsAlert = true;
                                 clippyProductsDetails.HabitsCounter++;
+
+                                clippyProductsDetails.NotVeganCounter++;
+                            }
+                            else
+                            {
+                                clippyProductsDetails.VeganCounter++;
                             }
                         }
                     }
@@ -258,6 +275,12 @@ namespace m_clippy.Services
                             {
                                 clippyProductDetail.HabitsAlert = true;
                                 clippyProductsDetails.HabitsCounter++;
+
+                                clippyProductsDetails.NotVegetarianCounter++;
+                            }
+                            else
+                            {
+                                clippyProductsDetails.VegetarianCounter++;
                             }
                         }
                     }
@@ -271,6 +294,12 @@ namespace m_clippy.Services
                             {
                                 clippyProductDetail.HabitsAlert = true;
                                 clippyProductsDetails.HabitsCounter++;
+
+                                clippyProductsDetails.NotBioCounter++;
+                            }
+                            else
+                            {
+                                clippyProductsDetails.BioCounter++;
                             }
                         }
                     }
@@ -282,8 +311,8 @@ namespace m_clippy.Services
             // we just count the unique number of different countries from all articles bought by customer
             clippyProductsDetails.CountriesCounter = CountriesSet.Count;
 
-            clippyProductsDetails.CarKm = r.Next(0, 100) + "km";
-            clippyProductsDetails.PlanesKm = r.Next(0, 500) + "km";
+            clippyProductsDetails.CarKm = r.Next(0, 100) + " km";
+            clippyProductsDetails.PlanesKm = r.Next(0, 500) + " km";
 
 
             // Naive counter impl
