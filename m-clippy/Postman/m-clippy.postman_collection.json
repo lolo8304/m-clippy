@@ -26,6 +26,26 @@
 			"response": []
 		},
 		{
+			"name": "Get Purchase by User Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/api/onboarding/users/{{UserId}}",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"onboarding",
+						"users",
+						"{{UserId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get Metadata Allergens",
 			"request": {
 				"method": "GET",

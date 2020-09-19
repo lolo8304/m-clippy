@@ -32,10 +32,10 @@ namespace m_clippy.Models
             user.Habits = new Habits
             {
                 Bio = true,
-                Casher = true,
-                Halal = true,
-                Vegan = true,
-                Vegetarian = true
+                Casher = false,
+                Halal = false,
+                Vegan = false,
+                Vegetarian = false
             };
 
 
@@ -44,8 +44,8 @@ namespace m_clippy.Models
                 Exclusion1 = "China",
                 Exclusion2 = null,
 
-                National = 2,
-                Regional = 1,
+                National = 1,
+                Regional = 2,
                 Outside = 3
             };
 
@@ -54,7 +54,7 @@ namespace m_clippy.Models
             {
                 Matching = new List<string>()
                 {
-                    "MAPI_ALLERGENES_laktosefrei","MAPI_ALLERGENES_ohneNuesse","MAPI_ALLERGENES_ohneSoja"
+                    "MAPI_ALLERGENES_laktosefrei"
                 }
             };
 
