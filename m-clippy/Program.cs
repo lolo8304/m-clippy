@@ -26,7 +26,7 @@ namespace m_clippy
 
         private static void ConfigurationLocalSettings(HostBuilderContext hostBuilderContext, IConfigurationBuilder configurationBuilder)
         {
-            configurationBuilder.AddJsonFile("local.settings.json", false, true);
+            configurationBuilder.AddJsonFile("local.settings.json", true, false);
         }
     }
 }
