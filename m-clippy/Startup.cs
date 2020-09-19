@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using m_clippy.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,6 +30,7 @@ namespace m_clippy
             //services.AddSingleton<IBotFrameworkHttpAdapter, AdapterWithErrorHandler>();
             // concrete class as startup
             //services.AddSingleton<AdapterWithErrorHandler>();
+            services.AddSingleton<ClippyStorage>();
 
             // transient, on request
             //services.AddTransient<IBot, EchoBot>();
