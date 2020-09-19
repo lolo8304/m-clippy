@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Flurl.Http;
 using m_clippy.Models;
@@ -29,11 +30,15 @@ namespace m_clippy.Services
 
             var u = _configuration["MigrosApiUsername"];
             var p = _configuration["MigrosApiPassword"];
-            var purchases = await $"https://hackzurich-api.migros.ch/hack/purchase/{clientId}"
+
+            var purchases = new Purchases()
+            {
+                purchases = await $"https://hackzurich-api.migros.ch/hack/purchase/{clientId}"
                 .WithHeader("Api-Version", "7")
                 .WithHeader("accept-language", "de")
                 .WithBasicAuth(u, p)
-                .GetJsonAsync<Purchases>();
+                .GetJsonAsync<List<Purchase>>()
+            };
 
             // we map to our own structure
             var clippyProductsDetails = new ClippyProductsDetails();
@@ -43,21 +48,23 @@ namespace m_clippy.Services
             {
                 var einkaufID = purchase.EinkaufID;
 
-                var cart = await $"https://hackzurich-api.migros.ch/hack/purchase/{clientId}/{einkaufID}/articles"
-                .WithHeader("Api-Version", "7")
-                .WithHeader("accept-language", "de")
-                .WithBasicAuth(u, p)
-                .GetJsonAsync<Cart>();
-
-                var productIds = "";
-                foreach (CartItem cartItem in cart.cartItems)
+                var cart = new Cart()
                 {
-                    string articleId = cartItem.ArtikelID.ToString();
+                    cartItems = await $"https://hackzurich-api.migros.ch/hack/purchase/{clientId}/{einkaufID}/articles"
+                        .WithHeader("Api-Version", "7")
+                        .WithHeader("accept-language", "de")
+                        .WithBasicAuth(u, p)
+                        .GetJsonAsync<List<CartItem>>()
+                };
 
-                    productIds = $"{productIds},{articleId}";
+                var productIdList = new List<string>();
+                foreach (CartItem cartItem in cart.cartItems.GetRange(0, 1)) // hack only 1 shoppingcart
+                {
+                    productIdList.Add(cartItem.ArtikelID.ToString());
                 }
+                var productIds = String.Join(",", productIdList.GetRange(0,1)); // hack only 3 products, need to filter scart by date
 
-                var productDetails = await $"https://hackzurich-api.migros.ch/products.json?ids={productIds}"
+                var productDetails = await $"https://hackzurich-api.migros.ch/products/{productIds}"
                                 .WithHeader("Api-Version", "7")
                                 .WithHeader("accept-language", "de")
                                 .WithBasicAuth(u, p)
@@ -71,11 +78,11 @@ namespace m_clippy.Services
                     clippyProductDetail.Image = product.ImageTransparent.Stack.ToString().Replace("{stack}", "medium");
 
                     // TODO should be historical to shoppingcart date :-)
-                    clippyProductDetail.Price = product.Price.Base.Price.ToString();
-                    clippyProductDetail.Quantity = product.Price.Base.Quantity.ToString() + product.Price.Base.Unit.ToString();
+                    clippyProductDetail.Price = product.Price?.Base?.Price.ToString();
+                    clippyProductDetail.Quantity = product?.Price?.Base?.Quantity.ToString() + product?.Price?.Base?.Unit.ToString();
 
                     // if it match user settings
-                    var allAllergens = product.Features.FindAll(s => s.LabelCode.Equals("MAPI_ALLERGENES"));
+                    var allAllergens = product?.Features.FindAll(s => s.LabelCode.Equals("MAPI_ALLERGENES"));
                     foreach (Models.ProductDetails.Feature allergen in allAllergens)
                     {
                         foreach (Value value in allergen.Values) {

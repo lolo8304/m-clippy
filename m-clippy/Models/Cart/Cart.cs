@@ -12,7 +12,7 @@ namespace m_clippy.Models.Cart
         public object ArtikelID;
 
         [JsonProperty("menge")]
-        public int Menge;
+        public double Menge;
     }
 
     public class Cart

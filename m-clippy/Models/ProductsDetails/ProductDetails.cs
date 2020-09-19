@@ -192,7 +192,7 @@ namespace m_clippy.Models.ProductDetails
         public string ItsValue;
 
         [JsonProperty("numeric_value")]
-        public int? NumericValue;
+        public double? NumericValue;
 
         [JsonProperty("boolean_value")]
         public bool? BooleanValue;
@@ -240,7 +240,7 @@ namespace m_clippy.Models.ProductDetails
         public string Value;
 
         [JsonProperty("numeric_value")]
-        public int? NumericValue;
+        public double? NumericValue;
     }
 
     public class InternalFeature
