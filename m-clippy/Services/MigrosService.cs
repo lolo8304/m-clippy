@@ -108,12 +108,19 @@ namespace m_clippy.Services
                     {
                         foreach (Value value in productAllergen.Values)
                         {
-                            if (user.Allergies.Matching.Contains(value.ValueCode.ToString()))
+                            string allergen = value.ValueCode.ToString();
+
+                            if (user.Allergies.Matching.Contains(allergen))
                             {
                                 clippyProductDetail.AllergyAlert = true;
 
                                 clippyProductsDetails.AllergyCounter++;
                             }
+
+                            // keep track of all allergens
+                            int previousValue = clippyProductsDetails.allergens.GetValueOrDefault(allergen, 0);
+                            clippyProductsDetails.allergens.Remove(allergen);
+                            clippyProductsDetails.allergens.Add(allergen, previousValue++);
                         }
                     }
 

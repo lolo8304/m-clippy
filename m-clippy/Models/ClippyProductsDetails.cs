@@ -22,9 +22,12 @@ namespace m_clippy.Models
         public double RegionalSum { get; set; }
         public double OutsideSum { get; set; }
 
+        public Dictionary<string, int> allergens { get; set; }
+
         public ClippyProductsDetails()
         {
             list = new List<ClippyProductDetail>();
+            allergens = new Dictionary<string, int>();
         }
     }
 
