@@ -381,6 +381,12 @@ namespace m_clippy.Models.ProductDetails
         public double AverageAll;
     }
 
+    public class Origins
+    {
+        [JsonProperty("producing_country")]
+        public string ProducingCountry;
+    }
+
     public class Description
     {
         [JsonProperty("text")]
@@ -433,6 +439,9 @@ namespace m_clippy.Models.ProductDetails
 
         [JsonProperty("image")]
         public Image4 Image;
+
+        [JsonProperty("origins")]
+        public Origins Origins;
 
         [JsonProperty("image_transparent")]
         public ImageTransparent ImageTransparent;

@@ -9,11 +9,14 @@ namespace m_clippy.Models
         public List<ClippyProductDetail> list { get; set; }
 
         // 0 to 100% target
-        public int GreenScore { get; set; }
+        public int Score { get; set; }
 
         public int HabitsCounter { get; set; }
         public int LocationCounter { get; set; }
         public int AllergyCounter { get; set; }
+
+
+        public int CountriesCounter { get; set; }
 
         public ClippyProductsDetails()
         {

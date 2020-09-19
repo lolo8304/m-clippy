@@ -11,6 +11,9 @@ namespace m_clippy.Models
         public string Price { get; set; }
         public string Quantity { get; set; }
 
+        public string ArticleID { get; set; }
+        
+
         public bool LocationAlert { get; set; }
         public bool HabitsAlert { get; set; }
         public bool AllergyAlert { get; set; }

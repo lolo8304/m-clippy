@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
+using Flurl.Http;
 using m_clippy.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -9,6 +11,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Polly;
 
 namespace m_clippy
 {
@@ -35,6 +38,21 @@ namespace m_clippy
 
             // transient, on request
             //services.AddTransient<IBot, EchoBot>();
+
+
+
+            // One important note is that this approach will not work with a policy that handles FlurlHttpException.
+            // That's because you're intercepting calls at the HttpMessageHandler level here. Flurl converts responses
+            // and errors to FlurlHttpExceptions higher up the stack, so those won't get trapped/retried with this approach.
+            // The policy in the example above traps HttpRequestException and HttpResponseMessage
+            // (with non-2XX status codes), which will work.
+            // https://stackoverflow.com/questions/52272374/set-a-default-polly-policy-with-flurl
+            var policy = Policy
+                .Handle<HttpRequestException>()
+                .OrResult<HttpResponseMessage>(r => !r.IsSuccessStatusCode)
+                .RetryAsync(5);
+
+            FlurlHttp.Configure(settings => settings.HttpClientFactory = new PollyFactory(policy));
 
         }
 

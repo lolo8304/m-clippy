@@ -63,6 +63,8 @@ namespace m_clippy.Models.Migros
         [JsonProperty("allergens")]
         public List<Allergen> Allergens;
 
+
+
         [JsonProperty("image")]
         public Image Image;
 
