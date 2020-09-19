@@ -117,6 +117,8 @@ namespace m_clippy.Services
                         }
                     }
 
+
+                    bool sumAdded = false;
                     // user value first produced in CH
                     if (user.Locations.National == 1) {
                         bool inCH = productDetail.Origins.ProducingCountry.Equals("Hergestellt in der Schweiz");
@@ -133,6 +135,11 @@ namespace m_clippy.Services
                                 clippyProductDetail.LocationAlert = true;
                                 clippyProductsDetails.LocationCounter++;
                             }
+                            else
+                            {
+                                clippyProductsDetails.NationalSum += Convert.ToDouble(clippyProductDetail.Price);
+                                sumAdded = true;
+                            }
                         }
                     }
 
@@ -146,6 +153,10 @@ namespace m_clippy.Services
                                 clippyProductDetail.LocationAlert = true;
                                 clippyProductsDetails.LocationCounter++;
                             }
+                            else {
+                                clippyProductsDetails.RegionalSum += Convert.ToDouble(clippyProductDetail.Price);
+                                sumAdded = true;
+                            }
                         }
 
                     }
@@ -156,6 +167,11 @@ namespace m_clippy.Services
                         {
                             CountriesSet.Add(productDetail.Origins.ProducingCountry.ToString().ToLower());
                         }
+                    }
+
+                    if (!sumAdded) {
+                        clippyProductsDetails.OutsideSum += Convert.ToDouble(clippyProductDetail.Price);
+                        sumAdded = true;
                     }
 
                     if (user.Habits.Vegan)
