@@ -16,6 +16,10 @@ namespace m_clippy.Models
                 Name = "Frans Muster",
                 Cumulus = "2345 56789 34567",
                 Points = "9167",
+                ClientId = "102531",
+
+
+                Configured = false,
 
 
                 Alerts = new Alerts()

@@ -7,6 +7,9 @@ namespace m_clippy.Models
         public string Cumulus { get; set; }
         public string Points { get; set; }
         public string Id { get; set; }
+        public string ClientId { get; set; }
+
+        public bool Configured { get; set; }
 
         public Habits Habits { get; set; }
         public Location Location { get; set; }
