@@ -127,7 +127,7 @@ namespace m_clippy.Services
                         clippyProductDetail.Price = 0.0;
                     }
 
-
+                    //n some product have no quantities
                     if (clippyProductDetail.Quantity.Equals(""))
                     {
                         clippyProductDetail.Quantity = "1";
@@ -224,7 +224,19 @@ namespace m_clippy.Services
                     {
                         if (productDetail.Origins.ProducingCountry != null)
                         {
-                            CountriesSet.Add(productDetail.Origins.ProducingCountry.ToString().ToLower());
+                            string country = productDetail.Origins.ProducingCountry.ToString().ToLower();
+                            CountriesSet.Add(country);
+
+                            //fixing temporary mess of data 
+                            if (country.Contains("in der schweiz")
+                                || country.Contains("suisse")
+                                || country.Contains("schweizer produkt")
+                                ) {
+                                country = "schweiz";
+                            }
+
+                            // keep track of all ProducingCountry
+                            clippyProductsDetails.ProducingCountries.AddOrUpdate(country, 1, (allergen, count) => count + 1);
                         }
                     }
 
@@ -321,18 +333,29 @@ namespace m_clippy.Services
             // we just count the unique number of different countries from all articles bought by customer
             clippyProductsDetails.CountriesCounter = CountriesSet.Count;
 
+
+            // VISION but not time to build geolocation distances nor CO2 calculations
             clippyProductsDetails.CarKm = r.Next(5, 100) + " km";
             clippyProductsDetails.PlanesKm = r.Next(10, 500) + " km";
 
 
             // Naive counter impl
-            clippyProductsDetails.Score = 100 - (clippyProductsDetails.AllergyCounter + clippyProductsDetails.LocationCounter +
-                clippyProductsDetails.HabitsCounter);
-            if (clippyProductsDetails.Score < 0)
+            int score = 100;
+            if (user.Habits.Bio) {
+                score = score - clippyProductsDetails.NotBioCounter;
+            }
+            if (user.Habits.Vegan)
+            {
+                score = score - clippyProductsDetails.NotVeganCounter;
+            }
+            if (user.Habits.Vegetarian)
+            {
+                score = score - clippyProductsDetails.NotVegetarianCounter;
+            }
+            if (score < 0)
             {
                 clippyProductsDetails.Score = 0;
             }
-
 
             return clippyProductsDetails;
         }

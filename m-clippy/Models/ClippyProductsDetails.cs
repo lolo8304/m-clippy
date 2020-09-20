@@ -18,6 +18,8 @@ namespace m_clippy.Models
 
 
         public int CountriesCounter { get; set; }
+        public ConcurrentDictionary<string, int> ProducingCountries { get; set; }
+
         public string PlanesKm { get; set; }
         public string CarKm { get; set; }
 
@@ -45,6 +47,7 @@ namespace m_clippy.Models
         {
             list = new List<ClippyProductDetail>();
             allergens = new ConcurrentDictionary<string, int>();
+            ProducingCountries = new ConcurrentDictionary<string, int>();
         }
     }
 
