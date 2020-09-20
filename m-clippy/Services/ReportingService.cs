@@ -352,10 +352,13 @@ namespace m_clippy.Services
             {
                 score = score - clippyProductsDetails.NotVegetarianCounter;
             }
-            if (score < 0)
+            if (clippyProductsDetails.Score < 0)
             {
                 clippyProductsDetails.Score = 0;
             }
+
+
+            clippyProductsDetails.ProducingCountries2 = new SortedDictionary<string, int>(clippyProductsDetails.ProducingCountries);
 
             return clippyProductsDetails;
         }
