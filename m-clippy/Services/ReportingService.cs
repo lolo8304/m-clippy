@@ -102,6 +102,8 @@ namespace m_clippy.Services
 
                 foreach (ProductDetail productDetail in productDetails.Products)
                 {
+                    clippyProductsDetails.ProductsAnalyzed++;
+
                     var clippyProductDetail = new ClippyProductDetail
                     {
                         Thumbnail = productDetail?.ImageTransparent?.Stack.ToString().Replace("{stack}", "small"),
@@ -148,9 +150,7 @@ namespace m_clippy.Services
                                 }
 
                                 // keep track of all allergens
-                                int previousValue = clippyProductsDetails.allergens.GetValueOrDefault(allergen, 0);
-                                clippyProductsDetails.allergens.Remove(allergen);
-                                clippyProductsDetails.allergens.Add(allergen, previousValue++);
+                                clippyProductsDetails.allergens.AddOrUpdate(allergen, 1, (allergen, count) => count + 1);
 
                                 clippyProductsDetails.AllergensCounter++;
                             }

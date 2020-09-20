@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 
 
@@ -32,16 +33,18 @@ namespace m_clippy.Models
         public int NoAllergensCounter { get; set; }
         public int AllergensCounter { get; set; }
 
+        public int ProductsAnalyzed { get; set; }
+
         public double NationalSum { get; set; }
         public double RegionalSum { get; set; }
         public double OutsideSum { get; set; }
 
-        public Dictionary<string, int> allergens { get; set; }
+        public ConcurrentDictionary<string, int> allergens { get; set; }
 
         public ClippyProductsDetails()
         {
             list = new List<ClippyProductDetail>();
-            allergens = new Dictionary<string, int>();
+            allergens = new ConcurrentDictionary<string, int>();
         }
     }
 
