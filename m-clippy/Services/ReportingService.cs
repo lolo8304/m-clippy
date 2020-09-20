@@ -110,10 +110,12 @@ namespace m_clippy.Services
                         Image = productDetail?.ImageTransparent?.Stack.ToString().Replace("{stack}", "medium"),
 
                         // TODO should be historical to shoppingcart date :-)
-           
+
                         Quantity = productDetail?.Price?.Base?.Quantity.ToString() + productDetail?.Price?.Base?.Unit.ToString(),
 
-                        ArticleID = productDetail?.Id.ToString()
+                        ArticleID = productDetail?.Id.ToString(),
+
+                        Name = productDetail?.Name.ToString()
                     };
 
                     if (productDetail.Price != null)
@@ -356,9 +358,6 @@ namespace m_clippy.Services
             {
                 clippyProductsDetails.Score = 0;
             }
-
-
-            clippyProductsDetails.ProducingCountries2 = new SortedDictionary<string, int>(clippyProductsDetails.ProducingCountries);
 
             return clippyProductsDetails;
         }

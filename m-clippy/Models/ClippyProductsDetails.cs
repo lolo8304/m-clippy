@@ -16,10 +16,8 @@ namespace m_clippy.Models
         public int LocationCounter { get; set; }
         public int AllergyCounter { get; set; }
 
-
         public int CountriesCounter { get; set; }
         public ConcurrentDictionary<string, int> ProducingCountries { get; set; }
-        public SortedDictionary<string, int> ProducingCountries2 { get; set; }
 
         public string PlanesKm { get; set; }
         public string CarKm { get; set; }
