@@ -106,8 +106,9 @@ namespace m_clippy.Services
 
                     var clippyProductDetail = new ClippyProductDetail
                     {
-                        Thumbnail = productDetail?.ImageTransparent?.Stack.ToString().Replace("{stack}", "small"),
-                        Image = productDetail?.ImageTransparent?.Stack.ToString().Replace("{stack}", "medium"),
+                        Thumbnail = productDetail?.Image?.Stack.ToString().Replace("{stack}", "small"),
+                        Image = productDetail?.Image?.Stack.ToString().Replace("{stack}", "medium"),
+                        Original = productDetail?.Image?.Stack.ToString().Replace("{stack}", "original"),
 
                         // TODO should be historical to shoppingcart date :-)
 
