@@ -2,20 +2,23 @@
 using Flurl.Http.Configuration;
 using Polly;
 
-public class PollyFactory : DefaultHttpClientFactory
+namespace m_clippy
 {
-    private readonly IAsyncPolicy<HttpResponseMessage> _policy;
-
-    public PollyFactory(IAsyncPolicy<HttpResponseMessage> policy)
+    public class PollyFactory : DefaultHttpClientFactory
     {
-        _policy = policy;
-    }
+        private readonly IAsyncPolicy<HttpResponseMessage> _policy;
 
-    public override HttpMessageHandler CreateMessageHandler()
-    {
-        return new PollyHandler(_policy)
+        public PollyFactory(IAsyncPolicy<HttpResponseMessage> policy)
         {
-            InnerHandler = base.CreateMessageHandler()
-        };
+            _policy = policy;
+        }
+
+        public override HttpMessageHandler CreateMessageHandler()
+        {
+            return new PollyHandler(_policy)
+            {
+                InnerHandler = base.CreateMessageHandler()
+            };
+        }
     }
 }

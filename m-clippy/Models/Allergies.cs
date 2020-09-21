@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using m_clippy.Models.Migros;
+﻿using System.Collections.Generic;
 
 namespace m_clippy.Models
 {

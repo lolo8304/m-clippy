@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Flurl.Http;
 using m_clippy.Models;
-using m_clippy.Models.Allergens;
 using m_clippy.Models.Cart;
-using m_clippy.Models.Migros;
-using m_clippy.Models.ProductDetails;
-using m_clippy.Models.Purchases;
+using m_clippy.Models.ProductsDetails;
+using m_clippy.Models.Purchase;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using Polly;
 
 namespace m_clippy.Services
 {
@@ -19,8 +17,22 @@ namespace m_clippy.Services
         private readonly IConfiguration _configuration;
         private readonly ClippyStorage _clippyStorage;
         private readonly MigrosService _migrosService;
-
         private ILogger<ReportingService> _logger;
+
+        public static async Task<T> GetJsonAsync<T>(IConfiguration configuration, string url)
+        {
+            var u = configuration["MigrosApiUsername"];
+            var p = configuration["MigrosApiPassword"];
+
+            var result =
+                await url
+                    .WithHeader("Api-Version", "7")
+                    .WithHeader("accept-language", "de")
+                    .WithBasicAuth(u, p)
+                    .GetJsonAsync<T>();
+
+            return result;
+        }
 
         public ReportingService(ClippyStorage clippyStorage,
             MigrosService migrosService,
@@ -33,7 +45,7 @@ namespace m_clippy.Services
             _logger = logger;
         }
 
-        public async Task<ClippyProductsDetails> getPurchases(string userId)
+        public async Task<ClippyProductsDetails> GetPurchases(string userId)
         {
             var user = _clippyStorage.GetUser(userId);
             if (user == null)
@@ -42,65 +54,40 @@ namespace m_clippy.Services
                 user = _clippyStorage.PutUser(userId, user);
             }
 
-            string clientId = user.ClientId;
-
+            var clientId = user.ClientId;
 
             // HACK due to bad performance environment 
-            int limitPurchase = 8;
-            int limitCartItem = 4; // never go below 2 or the api call below products?ids=a,b,c,d wont work
-
-
-            var u = _configuration["MigrosApiUsername"];
-            var p = _configuration["MigrosApiPassword"];
+            const int limitPurchase = 8;
+            const int limitCartItem = 4; // never go below 2 or the api call below products?ids=a,b,c,d wont work
 
             var purchases = new Purchases()
             {
-                purchases = await $"https://hackzurich-api.migros.ch/hack/purchase/{clientId}"
-                .WithHeader("Api-Version", "7")
-                .WithHeader("accept-language", "de")
-                .WithBasicAuth(u, p)
-                .GetJsonAsync<List<Purchase>>()
+                purchases = await GetJsonAsync<List<Purchase>>(_configuration,
+                    $"https://hackzurich-api.migros.ch/hack/purchase/{clientId}")
             };
 
             // we map to our own structure
             var clippyProductsDetails = new ClippyProductsDetails();
-
-            _logger.LogDebug("Found " + purchases.purchases.Count + " purchases");
-
-            var CountriesSet = new HashSet<string>();
-            Random r = new Random();
+            var countriesSet = new HashSet<string>();
+            
+            var r = new Random();
             // TODO filter by date
             foreach (Purchase purchase in purchases.purchases.GetRange(0, limitPurchase))
             {
-                var einkaufID = purchase.EinkaufID;
-
+                var purchaseId = purchase.EinkaufID;
                 var cart = new Cart()
                 {
-                    cartItems = await $"https://hackzurich-api.migros.ch/hack/purchase/{clientId}/{einkaufID}/articles"
-                        .WithHeader("Api-Version", "7")
-                        .WithHeader("accept-language", "de")
-                        .WithBasicAuth(u, p)
-                        .GetJsonAsync<List<CartItem>>()
+                    cartItems = await GetJsonAsync<List<CartItem>>(_configuration,
+                        $"https://hackzurich-api.migros.ch/hack/purchase/{clientId}/{purchaseId}/articles")
                 };
-                _logger.LogDebug("Found " + cart.cartItems.Count + " cart items in purchase " + purchase.EinkaufID);
+                
+                var productIdList = cart.cartItems.Select(cartItem => cartItem.ArtikelID.ToString()).ToList();
+                var productIds = string.Join(",", productIdList);
+                var productDetails =
+                    await GetJsonAsync<ProductDetails>(_configuration,
+                        $"https://hackzurich-api.migros.ch/products.json?ids={productIds}&verbosity=detail");
 
-
-                var productIdList = new List<string>();
-                foreach (CartItem cartItem in cart.cartItems)
-                {
-                    productIdList.Add(cartItem.ArtikelID.ToString());
-                }
-                var productIds = String.Join(",", productIdList);
-
-                var productDetails = await $"https://hackzurich-api.migros.ch/products.json?ids={productIds}&verbosity=detail"
-                        .WithHeader("Api-Version", "7")
-                        .WithHeader("accept-language", "de")
-                        .WithBasicAuth(u, p)
-                        .GetJsonAsync<ProductDetails>();
-
-                _logger.LogDebug("Found " + cart.cartItems.Count + " cart items in purchase " + purchase.EinkaufID + " with " + productDetails.Products.Count);
-
-                foreach (ProductDetail productDetail in productDetails.Products)
+                foreach (var productDetail in productDetails.Products)
                 {
                     clippyProductsDetails.ProductsAnalyzed++;
 
@@ -110,9 +97,9 @@ namespace m_clippy.Services
                         Image = productDetail?.Image?.Stack.ToString().Replace("{stack}", "medium"),
                         Original = productDetail?.Image?.Stack.ToString().Replace("{stack}", "original"),
 
-                        // TODO should be historical to shoppingcart date :-)
-
-                        Quantity = productDetail?.Price?.Base?.Quantity.ToString() + productDetail?.Price?.Base?.Unit.ToString(),
+                        // TODO should be historical to shopping-cart date :-) i dont see this in their api
+                        Quantity = productDetail?.Price?.Base?.Quantity.ToString() +
+                                   productDetail?.Price?.Base?.Unit.ToString(),
 
                         ArticleID = productDetail?.Id.ToString(),
 
@@ -123,14 +110,15 @@ namespace m_clippy.Services
                     {
                         if (productDetail.Price.Base != null)
                         {
-                           clippyProductDetail.Price = productDetail.Price.Base.Price;
+                            clippyProductDetail.Price = productDetail.Price.Base.Price;
                         }
                     }
-                    else {
+                    else
+                    {
                         clippyProductDetail.Price = 0.0;
                     }
 
-                    //n some product have no quantities
+                    //In some product we have no quantities
                     if (clippyProductDetail.Quantity.Equals(""))
                     {
                         clippyProductDetail.Quantity = "1";
@@ -138,12 +126,13 @@ namespace m_clippy.Services
 
                     if (productDetail.Features != null)
                     {
-                        var productAllergens = productDetail?.Features.FindAll(s => s.LabelCode.Equals("MAPI_ALLERGENES"));
-                        foreach (Models.ProductDetails.Feature productAllergen in productAllergens)
+                        var productAllergens =
+                            productDetail?.Features.FindAll(s => s.LabelCode.Equals("MAPI_ALLERGENES"));
+                        foreach (Feature productAllergen in productAllergens)
                         {
                             foreach (Value value in productAllergen.Values)
                             {
-                                string allergen = value.ValueCode.ToString();
+                                var allergen = value.ValueCode.ToString();
 
                                 if (user.Allergies.Matching.Contains(allergen))
                                 {
@@ -153,7 +142,8 @@ namespace m_clippy.Services
                                 }
 
                                 // keep track of all allergens
-                                clippyProductsDetails.allergens.AddOrUpdate(allergen, 1, (allergen, count) => count + 1);
+                                clippyProductsDetails.allergens.AddOrUpdate(allergen, 1,
+                                    (allergen, count) => count + 1);
 
                                 clippyProductsDetails.AllergensCounter++;
                             }
@@ -165,26 +155,24 @@ namespace m_clippy.Services
                         }
                     }
 
-                    bool sumAdded = false;
+                    var sumAdded = false;
                     // user value first produced in CH
                     if (user.Locations.National == 1)
                     {
-                        if (productDetail.Origins != null) {
-                            if (productDetail.Origins.ProducingCountry != null)
+                        if (productDetail.Origins?.ProducingCountry != null)
+                        {
+                            var inCh = productDetail.Origins.ProducingCountry.Equals("Hergestellt in der Schweiz");
+                            if (!inCh)
                             {
-                                bool inCH = productDetail.Origins.ProducingCountry.Equals("Hergestellt in der Schweiz");
-                                if (!inCH)
-                                {
-                                    clippyProductDetail.LocationAlert = true;
-                                    clippyProductsDetails.LocationCounter++;
-                                }
+                                clippyProductDetail.LocationAlert = true;
+                                clippyProductsDetails.LocationCounter++;
                             }
                         }
 
                         if (productDetail.Labels != null)
                         {
-                            List<Models.ProductDetails.Label2> HasCHLabel = productDetail?.Labels.FindAll(s => s.Name.Equals("Swissness"));
-                            if (HasCHLabel.Count == 0)
+                            var hasChLabel = productDetail?.Labels.FindAll(s => s.Name.Equals("Swissness"));
+                            if (hasChLabel.Count == 0)
                             {
                                 clippyProductDetail.LocationAlert = true;
                                 clippyProductsDetails.LocationCounter++;
@@ -192,10 +180,11 @@ namespace m_clippy.Services
                             else
                             {
                                 // HACK data not good enough
-                    
-                                int range = 100;
-                                double rDouble = r.NextDouble() * range;
-                                clippyProductsDetails.NationalSum += rDouble + Convert.ToDouble(clippyProductDetail.Price);
+
+                                const int range = 100;
+                                var rDouble = r.NextDouble() * range;
+                                clippyProductsDetails.NationalSum +=
+                                    rDouble + Convert.ToDouble(clippyProductDetail.Price);
                                 sumAdded = true;
                             }
                         }
@@ -205,8 +194,8 @@ namespace m_clippy.Services
                     {
                         if (productDetail.Labels != null)
                         {
-                            List<Models.ProductDetails.Label2> Regional = productDetail?.Labels.FindAll(s => s.Name.Equals("Aus der Region"));
-                            if (Regional.Count == 0)
+                            var regional = productDetail?.Labels.FindAll(s => s.Name.Equals("Aus der Region"));
+                            if (regional.Count == 0)
                             {
                                 clippyProductDetail.LocationAlert = true;
                                 clippyProductsDetails.LocationCounter++;
@@ -214,13 +203,13 @@ namespace m_clippy.Services
                             else
                             {
                                 // HACK data not good enough
-                                int range = 100;
-                                double rDouble = r.NextDouble() * range;
-                                clippyProductsDetails.RegionalSum += rDouble + Convert.ToDouble(clippyProductDetail.Price);
+                                const int range = 100;
+                                var rDouble = r.NextDouble() * range;
+                                clippyProductsDetails.RegionalSum +=
+                                    rDouble + Convert.ToDouble(clippyProductDetail.Price);
                                 sumAdded = true;
                             }
                         }
-
                     }
 
                     if (productDetail.Origins != null)
@@ -228,48 +217,37 @@ namespace m_clippy.Services
                         if (productDetail.Origins.ProducingCountry != null)
                         {
                             string country = productDetail.Origins.ProducingCountry.ToString().ToLower();
-                            CountriesSet.Add(country);
+                            countriesSet.Add(country);
 
                             //fixing temporary mess of data 
                             if (country.Contains("in der schweiz")
                                 || country.Contains("suisse")
                                 || country.Contains("schweizer produkt")
-                                ) {
+                            )
+                            {
                                 country = "schweiz";
                             }
 
                             // keep track of all ProducingCountry
-                            clippyProductsDetails.ProducingCountries.AddOrUpdate(country, 1, (allergen, count) => count + 1);
+                            clippyProductsDetails.ProducingCountries.AddOrUpdate(country, 1,
+                                (allergen, count) => count + 1);
                         }
                     }
 
                     if (!sumAdded)
                     {
                         // HACK data not good enough
-                        int range = 100;
-                        double rDouble = r.NextDouble() * range;
+                        const int range = 100;
+                        var rDouble = r.NextDouble() * range;
                         clippyProductsDetails.OutsideSum += rDouble + Convert.ToDouble(clippyProductDetail.Price);
                         sumAdded = true;
                     }
 
-              
                     if (productDetail.Labels != null)
                     {
-                        List<Models.ProductDetails.Label2> isVegan = productDetail?.Labels.FindAll(s => s.Name.Equals("V-vegan"));
-                        if (isVegan.Count == 0)
-                        {
-                            clippyProductDetail.HabitsAlert = true;
-                            clippyProductsDetails.HabitsCounter++;
-
-                            clippyProductsDetails.NotVeganCounter++;
-                        }
-                        else
-                        {
-                            clippyProductsDetails.VeganCounter++;
-                        }
-
-                        List<Models.ProductDetails.Label2> isVeganBlume = productDetail?.Labels.FindAll(s => s.Name.Equals("Veganblume"));
-                        if (isVeganBlume.Count == 0)
+                        var isVegan = productDetail?.Labels.FindAll(s => s.Name.Equals("V-vegan"));
+                        var isVeganB = productDetail?.Labels.FindAll(s => s.Name.Equals("Veganblume"));
+                        if (isVegan.Count == 0 || isVeganB.Count == 0)
                         {
                             clippyProductDetail.HabitsAlert = true;
                             clippyProductsDetails.HabitsCounter++;
@@ -289,7 +267,7 @@ namespace m_clippy.Services
 
                     if (productDetail.Labels != null)
                     {
-                        List<Models.ProductDetails.Label2> isVegetarian = productDetail?.Labels.FindAll(s => s.Name.Equals("V-vegetarisch"));
+                        var isVegetarian = productDetail?.Labels.FindAll(s => s.Name.Equals("V-vegetarisch"));
                         if (isVegetarian.Count == 0)
                         {
                             clippyProductDetail.HabitsAlert = true;
@@ -310,8 +288,8 @@ namespace m_clippy.Services
 
                     if (productDetail.Labels != null)
                     {
-                        List<Models.ProductDetails.Label2> isBIO = productDetail?.Labels.FindAll(s => s.Name.Equals("Migros Bio"));
-                        if (isBIO.Count == 0)
+                        var isBio = productDetail?.Labels.FindAll(s => s.Name.Equals("Migros Bio"));
+                        if (isBio.Count == 0)
                         {
                             clippyProductDetail.HabitsAlert = true;
                             clippyProductsDetails.HabitsCounter++;
@@ -328,33 +306,35 @@ namespace m_clippy.Services
                         clippyProductsDetails.NotBioCounter++;
                     }
 
-
                     clippyProductsDetails.list.Add(clippyProductDetail);
                 }
             }
 
             // we just count the unique number of different countries from all articles bought by customer
-            clippyProductsDetails.CountriesCounter = CountriesSet.Count;
+            clippyProductsDetails.CountriesCounter = countriesSet.Count;
 
 
             // VISION but not time to build geolocation distances nor CO2 calculations
             clippyProductsDetails.CarKm = r.Next(5, 100) + " km";
             clippyProductsDetails.PlanesKm = r.Next(10, 500) + " km";
 
-
             // Naive counter impl
-            int score = 100;
-            if (user.Habits.Bio) {
+            var score = 100;
+            if (user.Habits.Bio)
+            {
                 score = score - clippyProductsDetails.NotBioCounter;
             }
+
             if (user.Habits.Vegan)
             {
                 score = score - clippyProductsDetails.NotVeganCounter;
             }
+
             if (user.Habits.Vegetarian)
             {
                 score = score - clippyProductsDetails.NotVegetarianCounter;
             }
+
             if (clippyProductsDetails.Score < 0)
             {
                 clippyProductsDetails.Score = 0;
@@ -362,6 +342,5 @@ namespace m_clippy.Services
 
             return clippyProductsDetails;
         }
-
     }
 }

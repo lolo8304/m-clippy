@@ -3,17 +3,20 @@ using System.Threading;
 using System.Threading.Tasks;
 using Polly;
 
-public class PollyHandler : DelegatingHandler
+namespace m_clippy
 {
-    private readonly IAsyncPolicy<HttpResponseMessage> _policy;
-
-    public PollyHandler(IAsyncPolicy<HttpResponseMessage> policy)
+    public class PollyHandler : DelegatingHandler
     {
-        _policy = policy;
-    }
+        private readonly IAsyncPolicy<HttpResponseMessage> _policy;
 
-    protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-    {
-        return _policy.ExecuteAsync(ct => base.SendAsync(request, ct), cancellationToken);
+        public PollyHandler(IAsyncPolicy<HttpResponseMessage> policy)
+        {
+            _policy = policy;
+        }
+
+        protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+        {
+            return _policy.ExecuteAsync(ct => base.SendAsync(request, ct), cancellationToken);
+        }
     }
 }

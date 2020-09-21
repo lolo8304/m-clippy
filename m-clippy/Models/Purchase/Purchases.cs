@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace m_clippy.Models.Purchases
+namespace m_clippy.Models.Purchase
 {
     // generated with https://json2csharp.com/
 

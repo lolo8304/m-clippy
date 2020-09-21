@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace m_clippy.Models
+﻿namespace m_clippy.Models
 {
     public class Habits
     {

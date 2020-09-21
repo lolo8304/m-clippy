@@ -1,5 +1,4 @@
-﻿using System;
-namespace m_clippy.Models
+﻿namespace m_clippy.Models
 {
     public class User
     {

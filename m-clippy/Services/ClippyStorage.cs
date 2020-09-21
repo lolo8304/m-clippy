@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
 using m_clippy.Models;
 using Microsoft.Extensions.Logging;
 
@@ -8,12 +7,12 @@ namespace m_clippy.Services
     public class ClippyStorage
     {
         // Caching because of bad endpoint performances, better would be client side cacing or precalculation in backend
-        public readonly ConcurrentDictionary<string, User> User = new ConcurrentDictionary<string, User>();
+        private readonly ConcurrentDictionary<string, User> User = new ConcurrentDictionary<string, User>();
 
         // Caching because of bad endpoint performances, better would be client side cacing or precalculation in backend
-        public readonly ConcurrentDictionary<string, ClippyProductsDetails> ClippyProductsDetails = new ConcurrentDictionary<string, ClippyProductsDetails>();
+        private readonly ConcurrentDictionary<string, ClippyProductsDetails> ClippyProductsDetails = new ConcurrentDictionary<string, ClippyProductsDetails>();
 
-        public string Allergies;
+        private string Allergies;
 
         public ClippyStorage(ILogger<ClippyStorage> logger)
         {

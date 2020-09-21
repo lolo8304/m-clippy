@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+﻿using System.Net;
 using System.Threading.Tasks;
 using m_clippy.Models;
 using m_clippy.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -44,7 +40,7 @@ namespace m_clippy.Controllers
 
             if (clippyProductsDetails == null)
             {
-                clippyProductsDetails = await _reportingService.getPurchases(userId);
+                clippyProductsDetails = await _reportingService.GetPurchases(userId);
                 clippyProductsDetails = _clippyStorage.PutClippyProductDetails(userId, clippyProductsDetails);
             }
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace m_clippy.Models.ProductDetails
+namespace m_clippy.Models.ProductsDetails
 {
     // generated with https://json2csharp.com/
     public class ProductDetails

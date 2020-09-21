@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using m_clippy.Models.Migros;
-
-namespace m_clippy.Models
+﻿namespace m_clippy.Models
 {
     public class ClippyProductDetail
     {
