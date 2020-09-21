@@ -38,6 +38,7 @@ namespace m_clippy
             services.AddSingleton<AllergyService>();
             services.AddSingleton<ReportingService>();
 
+            services.AddSingleton<HttpProxyCacheExtension>();
             // transient, on request
             //services.AddTransient<IBot, EchoBot>();
 
