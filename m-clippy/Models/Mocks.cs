@@ -20,6 +20,9 @@ namespace m_clippy.Models
             if (userIds.TryGetValue(userId, out var clientId)) {
                 return clientId;
             } else {
+                if (userId.Length == 6 && int.TryParse(userId, out var clientAsUserId) && clientAsUserId / 1000 == 102) {
+                    return userId;
+                }
                 return defaultClientId;
             }
         }
@@ -27,6 +30,7 @@ namespace m_clippy.Models
 
         private User NewUser(string userId) {
             var clientId = getClientId(userId);
+            var clientIdPoints = int.Parse(clientId);
             var defaultPoints = int.Parse(defaultClientId);
             var points = 9167;
             return new User
@@ -34,8 +38,9 @@ namespace m_clippy.Models
                 Id = userId,
                 FirstName = "Franziska",
                 LastName = "Muster",
-                Cumulus = "2099 354 963 435",
-                Points = $"{points + 10 * (defaultPoints - int.Parse(clientId))}",
+                Cumulus = $"2099 354 {defaultPoints / 1000} {defaultPoints % 1000}",
+                //Points = $"{points + 10 * (defaultPoints - clientIdPoints)}",
+                Points = $"{clientIdPoints}",
                 // ClientId = "102530",
                 // ClientId = "102531",
                 //ClientId = "102532",
