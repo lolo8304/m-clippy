@@ -18,7 +18,9 @@ namespace m_clippy.Models
                 LastName = "Muster",
                 Cumulus = "2099 354 963 435",
                 Points = "9167",
-                ClientId = "102531",
+                // ClientId = "102530",
+                // ClientId = "102531",
+                ClientId = "102532",
 
                 Configured = true,
 

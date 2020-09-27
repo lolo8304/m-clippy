@@ -16,12 +16,12 @@ namespace m_clippy.Controllers
     public class MetadataController : ControllerBase
     {
         private readonly ClippyStorage _clippyStorage;
-        private readonly MigrosService _migrosService;
+        private readonly AllergyService _allergyService;
 
-        public MetadataController(ClippyStorage clippyStorage, MigrosService migrosService)
+        public MetadataController(ClippyStorage clippyStorage, AllergyService allergyService)
         {
             _clippyStorage = clippyStorage;
-            _migrosService = migrosService;
+            _allergyService = allergyService;
         }
 
         [HttpGet]
@@ -34,7 +34,7 @@ namespace m_clippy.Controllers
             if (allergiesString == null)
             {
 
-                var allergies = await _migrosService.GetAllergiesAsync();
+                var allergies = await _allergyService.GetAllergiesAsync();
                 allergiesString = JsonConvert.SerializeObject(allergies);
 
                 _clippyStorage.PutAllergies(allergiesString);

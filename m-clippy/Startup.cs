@@ -1,4 +1,7 @@
+using System;
 using System.Net.Http;
+using System.Threading.Tasks;
+using Flurl;
 using Flurl.Http;
 using m_clippy.Services;
 using Microsoft.AspNetCore.Builder;
@@ -7,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Polly;
+using Scotch;
 
 namespace m_clippy
 {
@@ -49,7 +53,12 @@ namespace m_clippy
                 .RetryAsync(5);
 
             FlurlHttp.Configure(settings => settings.HttpClientFactory = new PollyFactory(policy));
+        }
 
+        public static ScotchMode GetScotchMode()
+        {
+            // return ScotchMode.Recording;
+            return ScotchMode.Replaying;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

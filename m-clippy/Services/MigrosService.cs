@@ -22,29 +22,9 @@ namespace m_clippy.Services
             _logger = logger;
         }
 
-        public async Task<AllergenList> GetAllergiesAsync()
-        {
-            var productList = await ReportingService.GetJsonAsync<ProductList>(_configuration,
-                "https://hackzurich-api.migros.ch/products?feature_facets%5B%5D=MAPI_ALLERGENES&facet_size=0");
-
-            // we map to our own structure
-            var allergenList = new AllergenList();
-            var terms = productList.Facets.MAPIALLERGENES.Terms;
-            foreach (var allergenEntry in terms.Select(term => new AllergenEntry
-            {
-                Code = term.Term,
-                Text = term.Name
-            }))
-            {
-                allergenList.list.Add(allergenEntry);
-            }
-
-            return allergenList;
-        }
-
         public async Task<Product> GetProductByIdAsync(string productId)
         {
-            return await ReportingService.GetJsonAsync<Product>(_configuration,$"https://hackzurich-api.migros.ch/products/{productId}.json");
+            return await ReportingService.GetJsonAsync<Product>(_configuration,$"https://hackzurich-api.migros.ch/products/{productId}", "products");
         }
         
     }

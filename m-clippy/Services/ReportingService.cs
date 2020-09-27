@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
+using System.Net.Http;
+using System.Reflection;
 using System.Threading.Tasks;
 using Flurl.Http;
 using m_clippy.Models;
@@ -9,6 +12,7 @@ using m_clippy.Models.ProductsDetails;
 using m_clippy.Models.Purchase;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Scotch;
 
 namespace m_clippy.Services
 {
@@ -16,33 +20,29 @@ namespace m_clippy.Services
     {
         private readonly IConfiguration _configuration;
         private readonly ClippyStorage _clippyStorage;
-        private readonly MigrosService _migrosService;
-        private ILogger<ReportingService> _logger;
-
-        public static async Task<T> GetJsonAsync<T>(IConfiguration configuration, string url)
+        
+        public static async Task<T> GetJsonAsync<T>(IConfiguration configuration, string url, string fileNameCache)
         {
             var u = configuration["MigrosApiUsername"];
             var p = configuration["MigrosApiPassword"];
-
-            var result =
-                await url
-                    .WithHeader("Api-Version", "7")
-                    .WithHeader("accept-language", "de")
-                    .WithBasicAuth(u, p)
-                    .GetJsonAsync<T>();
+            
+            // https://github.com/mleech/scotch
+            var httpClient = HttpClients.NewHttpClient($"./cassette/{fileNameCache}.json", Startup.GetScotchMode());
+            
+            var cli = new FlurlClient(httpClient);
+            var result = await cli.Request(url).WithHeader("Api-Version", "7")
+                .WithHeader("accept-language", "de")
+                .WithBasicAuth(u, p)
+                .GetJsonAsync<T>();
 
             return result;
         }
 
         public ReportingService(ClippyStorage clippyStorage,
-            MigrosService migrosService,
-            IConfiguration configuration,
-            ILogger<ReportingService> logger)
+            IConfiguration configuration)
         {
             _configuration = configuration;
             _clippyStorage = clippyStorage;
-            _migrosService = migrosService;
-            _logger = logger;
         }
 
         public async Task<ClippyProductsDetails> GetPurchases(string userId)
@@ -58,12 +58,11 @@ namespace m_clippy.Services
 
             // HACK due to bad performance environment 
             const int limitPurchase = 8;
-            const int limitCartItem = 4; // never go below 2 or the api call below products?ids=a,b,c,d wont work
 
             var purchases = new Purchases()
             {
                 purchases = await GetJsonAsync<List<Purchase>>(_configuration,
-                    $"https://hackzurich-api.migros.ch/hack/purchase/{clientId}")
+                    $"https://hackzurich-api.migros.ch/hack/purchase/{clientId}", "purchases")
             };
 
             // we map to our own structure
@@ -78,14 +77,14 @@ namespace m_clippy.Services
                 var cart = new Cart()
                 {
                     cartItems = await GetJsonAsync<List<CartItem>>(_configuration,
-                        $"https://hackzurich-api.migros.ch/hack/purchase/{clientId}/{purchaseId}/articles")
+                        $"https://hackzurich-api.migros.ch/hack/purchase/{clientId}/{purchaseId}/articles", "articles")
                 };
                 
                 var productIdList = cart.cartItems.Select(cartItem => cartItem.ArtikelID.ToString()).ToList();
                 var productIds = string.Join(",", productIdList);
                 var productDetails =
                     await GetJsonAsync<ProductDetails>(_configuration,
-                        $"https://hackzurich-api.migros.ch/products.json?ids={productIds}&verbosity=detail");
+                        $"https://hackzurich-api.migros.ch/products.json?ids={productIds}&verbosity=detail", "products");
 
                 foreach (var productDetail in productDetails.Products)
                 {
@@ -93,17 +92,17 @@ namespace m_clippy.Services
 
                     var clippyProductDetail = new ClippyProductDetail
                     {
-                        Thumbnail = productDetail?.Image?.Stack.ToString().Replace("{stack}", "small"),
-                        Image = productDetail?.Image?.Stack.ToString().Replace("{stack}", "medium"),
-                        Original = productDetail?.Image?.Stack.ToString().Replace("{stack}", "original"),
+                        Thumbnail = productDetail?.Image?.Stack.Replace("{stack}", "small"),
+                        Image = productDetail?.Image?.Stack.Replace("{stack}", "medium"),
+                        Original = productDetail?.Image?.Stack.Replace("{stack}", "original"),
 
                         // TODO should be historical to shopping-cart date :-) i dont see this in their api
-                        Quantity = productDetail?.Price?.Base?.Quantity.ToString() +
-                                   productDetail?.Price?.Base?.Unit.ToString(),
+                        Quantity = productDetail?.Price?.Base?.Quantity +
+                                   productDetail?.Price?.Base?.Unit,
 
-                        ArticleID = productDetail?.Id.ToString(),
+                        ArticleID = productDetail?.Id,
 
-                        Name = productDetail?.Name.ToString()
+                        Name = productDetail?.Name
                     };
 
                     if (productDetail.Price != null)
@@ -132,7 +131,7 @@ namespace m_clippy.Services
                         {
                             foreach (Value value in productAllergen.Values)
                             {
-                                var allergen = value.ValueCode.ToString();
+                                var allergen = value.ValueCode;
 
                                 if (user.Allergies.Matching.Contains(allergen))
                                 {
@@ -143,7 +142,7 @@ namespace m_clippy.Services
 
                                 // keep track of all allergens
                                 clippyProductsDetails.allergens.AddOrUpdate(allergen, 1,
-                                    (allergen, count) => count + 1);
+                                    (anAllergen, count) => count + 1);
 
                                 clippyProductsDetails.AllergensCounter++;
                             }
@@ -216,7 +215,7 @@ namespace m_clippy.Services
                     {
                         if (productDetail.Origins.ProducingCountry != null)
                         {
-                            string country = productDetail.Origins.ProducingCountry.ToString().ToLower();
+                            string country = productDetail.Origins.ProducingCountry.ToLower();
                             countriesSet.Add(country);
 
                             //fixing temporary mess of data 
@@ -240,7 +239,6 @@ namespace m_clippy.Services
                         const int range = 100;
                         var rDouble = r.NextDouble() * range;
                         clippyProductsDetails.OutsideSum += rDouble + Convert.ToDouble(clippyProductDetail.Price);
-                        sumAdded = true;
                     }
 
                     if (productDetail.Labels != null)
