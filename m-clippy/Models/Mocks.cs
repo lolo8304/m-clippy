@@ -4,28 +4,51 @@ namespace m_clippy.Models
 {
     public class Mocks
     {
+        private Dictionary<string, string> userIds;
+        private string defaultUserId = "b6adb9a1-9f93-49b9-8793-d6f91d44e4a3";
+        private string defaultClientId = "102532";
+
         public Mocks()
         {
+            userIds = new Dictionary<string, string>();
+            userIds.Add("30fa3852-3f8f-47ce-ad4a-72cbb6356d7f", "102530");
+            userIds.Add("4f124c26-50ff-4775-96cb-d95360631e00", "102531");
+            userIds.Add(defaultUserId, defaultClientId); // default
+        }
+
+        private string getClientId(string userId) {
+            if (userIds.TryGetValue(userId, out var clientId)) {
+                return clientId;
+            } else {
+                return defaultClientId;
+            }
         }
 
 
-        public User User1()
-        {
-            var user = new User
+        private User NewUser(string userId) {
+            var clientId = getClientId(userId);
+            var defaultPoints = int.Parse(defaultClientId);
+            var points = 9167;
+            return new User
             {
-                Id = "b6adb9a1-9f93-49b9-8793-d6f91d44e4a3",
+                Id = userId,
                 FirstName = "Franziska",
                 LastName = "Muster",
                 Cumulus = "2099 354 963 435",
-                Points = "9167",
+                Points = $"{points + 10 * (defaultPoints - int.Parse(clientId))}",
                 // ClientId = "102530",
                 // ClientId = "102531",
-                ClientId = "102532",
-
+                //ClientId = "102532",
+                ClientId = clientId,
                 Configured = true,
-
                 Alerts = new Alerts()
             };
+        }
+
+
+        public User GetMockUserById(string userId)
+        {
+            var user = NewUser(userId);
             user.Alerts.Habits = true;
             user.Alerts.Location = true;
             user.Alerts.Allergies = true;

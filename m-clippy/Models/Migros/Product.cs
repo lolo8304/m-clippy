@@ -447,8 +447,6 @@ namespace m_clippy.Models.Migros
 
     public class ImageTransparent : Image
     {
-        [JsonProperty("source")]
-        public string Source;
     }
 
     public class InternalFeature
