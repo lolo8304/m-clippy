@@ -14518,5 +14518,269 @@
       "HttpVersion": "1.1"
     },
     "RecordedAt": "2020-09-27T22:08:41.371224+02:00"
+  },
+  {
+    "Request": {
+      "Method": "GET",
+      "URI": "https://hackzurich-api.migros.ch/hack/purchase/102222/201901-102222-0001/articles",
+      "RequestHeaders": {
+        "Api-Version": "7",
+        "Accept-Language": "de",
+        "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
+        "Request-Id": "|2b44b35b-4f96e4863436f4c1.2."
+      },
+      "ContentHeaders": {},
+      "Body": ""
+    },
+    "Response": {
+      "Status": {
+        "Code": 200,
+        "Message": "OK"
+      },
+      "ResponseHeaders": {
+        "Vary": "Accept-Encoding",
+        "X-Cloud-Trace-Context": "818143f75d0e93522ab8cabbc5357865",
+        "Date": "Mon, 28 Sep 2020 05:29:21 GMT",
+        "Server": "Google,Frontend"
+      },
+      "ContentHeaders": {
+        "Content-Type": "application/json",
+        "Content-Length": "1196"
+      },
+      "Body": "[{\"artikelID\":104048100000,\"menge\":1},{\"artikelID\":104058100000,\"menge\":1},{\"artikelID\":104601600000,\"menge\":1},{\"artikelID\":111273700000,\"menge\":1},{\"artikelID\":111456400200,\"menge\":1},{\"artikelID\":111482100000,\"menge\":1},{\"artikelID\":115002700000,\"menge\":1},{\"artikelID\":196045000600,\"menge\":1},{\"artikelID\":204002600400,\"menge\":4},{\"artikelID\":204126100000,\"menge\":2},{\"artikelID\":204241700000,\"menge\":1},{\"artikelID\":204272000000,\"menge\":2},{\"artikelID\":205024000000,\"menge\":2},{\"artikelID\":210140024000,\"menge\":0.325},{\"artikelID\":210407042000,\"menge\":0.152},{\"artikelID\":210434342400,\"menge\":0.208},{\"artikelID\":210446922400,\"menge\":0.207},{\"artikelID\":210467442400,\"menge\":0.204},{\"artikelID\":220252010510,\"menge\":0.234},{\"artikelID\":220252020010,\"menge\":0.393},{\"artikelID\":231510982000,\"menge\":0.132},{\"artikelID\":233520695110,\"menge\":0.264},{\"artikelID\":233527090010,\"menge\":0.25},{\"artikelID\":260505301000,\"menge\":0.405},{\"artikelID\":263500513200,\"menge\":1},{\"artikelID\":274800501000,\"menge\":0.473},{\"artikelID\":511996400000,\"menge\":1},{\"artikelID\":512105200000,\"menge\":1},{\"artikelID\":703524300000,\"menge\":1},{\"artikelID\":705415400000,\"menge\":1},{\"artikelID\":818289824281,\"menge\":1}]\n",
+      "HttpVersion": "1.1"
+    },
+    "RecordedAt": "2020-09-28T07:29:21.095494+02:00"
+  },
+  {
+    "Request": {
+      "Method": "GET",
+      "URI": "https://hackzurich-api.migros.ch/hack/purchase/102222/201901-102222-0002/articles",
+      "RequestHeaders": {
+        "Api-Version": "7",
+        "Accept-Language": "de",
+        "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
+        "Request-Id": "|2b44b35b-4f96e4863436f4c1.4."
+      },
+      "ContentHeaders": {},
+      "Body": ""
+    },
+    "Response": {
+      "Status": {
+        "Code": 200,
+        "Message": "OK"
+      },
+      "ResponseHeaders": {
+        "Vary": "Accept-Encoding",
+        "X-Cloud-Trace-Context": "e24a3c0df0b887a9849cf978ea21b634;o=1",
+        "Date": "Mon, 28 Sep 2020 05:29:25 GMT",
+        "Server": "Google,Frontend"
+      },
+      "ContentHeaders": {
+        "Content-Type": "application/json",
+        "Content-Length": "1500"
+      },
+      "Body": "[{\"artikelID\":102003000000,\"menge\":1},{\"artikelID\":103527100000,\"menge\":1},{\"artikelID\":105331000000,\"menge\":2},{\"artikelID\":106273900000,\"menge\":1},{\"artikelID\":107065200000,\"menge\":1},{\"artikelID\":107125700000,\"menge\":1},{\"artikelID\":111401900200,\"menge\":2},{\"artikelID\":111418200200,\"menge\":1},{\"artikelID\":113106900000,\"menge\":1},{\"artikelID\":113805400000,\"menge\":1},{\"artikelID\":115027000000,\"menge\":1},{\"artikelID\":204002600400,\"menge\":5},{\"artikelID\":204250000000,\"menge\":1},{\"artikelID\":205000500000,\"menge\":2},{\"artikelID\":205001400000,\"menge\":2},{\"artikelID\":205021800000,\"menge\":2},{\"artikelID\":205022000000,\"menge\":2},{\"artikelID\":210413702500,\"menge\":0.163},{\"artikelID\":210457942400,\"menge\":0.212},{\"artikelID\":210515600000,\"menge\":1},{\"artikelID\":210604144400,\"menge\":0.207},{\"artikelID\":220622040111,\"menge\":0.41},{\"artikelID\":220624020020,\"menge\":0.183},{\"artikelID\":220660020011,\"menge\":0.186},{\"artikelID\":230110600910,\"menge\":1},{\"artikelID\":231000181000,\"menge\":0.182},{\"artikelID\":231010082000,\"menge\":0.094},{\"artikelID\":231505280300,\"menge\":0.134},{\"artikelID\":241101600000,\"menge\":0.185},{\"artikelID\":263405501000,\"menge\":0.644},{\"artikelID\":271802201000,\"menge\":0.225},{\"artikelID\":274460502300,\"menge\":1},{\"artikelID\":274800501000,\"menge\":0.444},{\"artikelID\":275700501000,\"menge\":0.705},{\"artikelID\":277000513200,\"menge\":1},{\"artikelID\":513332100000,\"menge\":1},{\"artikelID\":526121500000,\"menge\":1},{\"artikelID\":526273200000,\"menge\":1},{\"artikelID\":841753203943,\"menge\":1}]\n",
+      "HttpVersion": "1.1"
+    },
+    "RecordedAt": "2020-09-28T07:29:25.660937+02:00"
+  },
+  {
+    "Request": {
+      "Method": "GET",
+      "URI": "https://hackzurich-api.migros.ch/hack/purchase/102222/201901-102222-0003/articles",
+      "RequestHeaders": {
+        "Api-Version": "7",
+        "Accept-Language": "de",
+        "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
+        "Request-Id": "|2b44b35b-4f96e4863436f4c1.6."
+      },
+      "ContentHeaders": {},
+      "Body": ""
+    },
+    "Response": {
+      "Status": {
+        "Code": 200,
+        "Message": "OK"
+      },
+      "ResponseHeaders": {
+        "Vary": "Accept-Encoding",
+        "X-Cloud-Trace-Context": "310cf92df2574f846df8a474988637a6",
+        "Date": "Mon, 28 Sep 2020 05:29:29 GMT",
+        "Server": "Google,Frontend"
+      },
+      "ContentHeaders": {
+        "Content-Type": "application/json",
+        "Content-Length": "967"
+      },
+      "Body": "[{\"artikelID\":111115000200,\"menge\":1},{\"artikelID\":111168000200,\"menge\":1},{\"artikelID\":111404000200,\"menge\":1},{\"artikelID\":111784005200,\"menge\":2},{\"artikelID\":114020100000,\"menge\":1},{\"artikelID\":196045000600,\"menge\":1},{\"artikelID\":204002600400,\"menge\":4},{\"artikelID\":204250000000,\"menge\":1},{\"artikelID\":205002700000,\"menge\":2},{\"artikelID\":210195502500,\"menge\":0.802},{\"artikelID\":210426142000,\"menge\":0.179},{\"artikelID\":210527800000,\"menge\":1},{\"artikelID\":212378900000,\"menge\":1},{\"artikelID\":220622040111,\"menge\":0.525},{\"artikelID\":220624020011,\"menge\":0.297},{\"artikelID\":220624531000,\"menge\":0.319},{\"artikelID\":227250010210,\"menge\":0.244},{\"artikelID\":260506701000,\"menge\":0.847},{\"artikelID\":263380708300,\"menge\":1},{\"artikelID\":264280301000,\"menge\":0.684},{\"artikelID\":270400509300,\"menge\":1},{\"artikelID\":270501902100,\"menge\":0.326},{\"artikelID\":274460003300,\"menge\":1},{\"artikelID\":274502501000,\"menge\":1.063},{\"artikelID\":275780313200,\"menge\":1}]\n",
+      "HttpVersion": "1.1"
+    },
+    "RecordedAt": "2020-09-28T07:29:29.176908+02:00"
+  },
+  {
+    "Request": {
+      "Method": "GET",
+      "URI": "https://hackzurich-api.migros.ch/hack/purchase/102222/201902-102222-0001/articles",
+      "RequestHeaders": {
+        "Api-Version": "7",
+        "Accept-Language": "de",
+        "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
+        "Request-Id": "|2b44b35b-4f96e4863436f4c1.8."
+      },
+      "ContentHeaders": {},
+      "Body": ""
+    },
+    "Response": {
+      "Status": {
+        "Code": 200,
+        "Message": "OK"
+      },
+      "ResponseHeaders": {
+        "Vary": "Accept-Encoding",
+        "X-Cloud-Trace-Context": "f57be5b49690001e1b20db560b3af1fa",
+        "Date": "Mon, 28 Sep 2020 05:29:33 GMT",
+        "Server": "Google,Frontend"
+      },
+      "ContentHeaders": {
+        "Content-Type": "application/json",
+        "Content-Length": "1269"
+      },
+      "Body": "[{\"artikelID\":109060100000,\"menge\":1},{\"artikelID\":111402000200,\"menge\":1},{\"artikelID\":111456300200,\"menge\":1},{\"artikelID\":111784005200,\"menge\":2},{\"artikelID\":114020100000,\"menge\":1},{\"artikelID\":115021100000,\"menge\":1},{\"artikelID\":115055200000,\"menge\":1},{\"artikelID\":122014200000,\"menge\":1},{\"artikelID\":204002600400,\"menge\":5},{\"artikelID\":204126100000,\"menge\":4},{\"artikelID\":204250000000,\"menge\":1},{\"artikelID\":204272000000,\"menge\":1},{\"artikelID\":210102024000,\"menge\":0.259},{\"artikelID\":212480824000,\"menge\":0.276},{\"artikelID\":220660020011,\"menge\":0.2},{\"artikelID\":227250610100,\"menge\":0.254},{\"artikelID\":230104070000,\"menge\":0.274},{\"artikelID\":231513081000,\"menge\":0.171},{\"artikelID\":233100261000,\"menge\":0.114},{\"artikelID\":233520184510,\"menge\":1},{\"artikelID\":260516501000,\"menge\":0.615},{\"artikelID\":263404701000,\"menge\":0.793},{\"artikelID\":264280301000,\"menge\":0.532},{\"artikelID\":271802201000,\"menge\":0.254},{\"artikelID\":274800501000,\"menge\":0.851},{\"artikelID\":501010600000,\"menge\":1},{\"artikelID\":502046800000,\"menge\":1},{\"artikelID\":511937700000,\"menge\":1},{\"artikelID\":526121500000,\"menge\":1},{\"artikelID\":704223900000,\"menge\":2},{\"artikelID\":704504000000,\"menge\":1},{\"artikelID\":706813000000,\"menge\":1},{\"artikelID\":818177724247,\"menge\":1}]\n",
+      "HttpVersion": "1.1"
+    },
+    "RecordedAt": "2020-09-28T07:29:33.377745+02:00"
+  },
+  {
+    "Request": {
+      "Method": "GET",
+      "URI": "https://hackzurich-api.migros.ch/hack/purchase/102222/201902-102222-0002/articles",
+      "RequestHeaders": {
+        "Api-Version": "7",
+        "Accept-Language": "de",
+        "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
+        "Request-Id": "|2b44b35b-4f96e4863436f4c1.10."
+      },
+      "ContentHeaders": {},
+      "Body": ""
+    },
+    "Response": {
+      "Status": {
+        "Code": 200,
+        "Message": "OK"
+      },
+      "ResponseHeaders": {
+        "Vary": "Accept-Encoding",
+        "X-Cloud-Trace-Context": "0b1412cf9c730599f8a376063b78e529;o=1",
+        "Date": "Mon, 28 Sep 2020 05:29:37 GMT",
+        "Server": "Google,Frontend"
+      },
+      "ContentHeaders": {
+        "Content-Type": "application/json",
+        "Content-Length": "762"
+      },
+      "Body": "[{\"artikelID\":107038900000,\"menge\":1},{\"artikelID\":111402000200,\"menge\":1},{\"artikelID\":111484500000,\"menge\":1},{\"artikelID\":111488600200,\"menge\":1},{\"artikelID\":111784005200,\"menge\":3},{\"artikelID\":196045000600,\"menge\":1},{\"artikelID\":204002600400,\"menge\":4},{\"artikelID\":204150100000,\"menge\":1},{\"artikelID\":204250000000,\"menge\":1},{\"artikelID\":205001400000,\"menge\":2},{\"artikelID\":220624020011,\"menge\":0.295},{\"artikelID\":227250010210,\"menge\":0.304},{\"artikelID\":230110600910,\"menge\":1},{\"artikelID\":230510251000,\"menge\":2},{\"artikelID\":231010082000,\"menge\":0.096},{\"artikelID\":231510581100,\"menge\":0.179},{\"artikelID\":270400509300,\"menge\":1},{\"artikelID\":274450003300,\"menge\":1},{\"artikelID\":274460003300,\"menge\":1},{\"artikelID\":274502501000,\"menge\":1.188}]\n",
+      "HttpVersion": "1.1"
+    },
+    "RecordedAt": "2020-09-28T07:29:36.982665+02:00"
+  },
+  {
+    "Request": {
+      "Method": "GET",
+      "URI": "https://hackzurich-api.migros.ch/hack/purchase/102222/201902-102222-0003/articles",
+      "RequestHeaders": {
+        "Api-Version": "7",
+        "Accept-Language": "de",
+        "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
+        "Request-Id": "|2b44b35b-4f96e4863436f4c1.12."
+      },
+      "ContentHeaders": {},
+      "Body": ""
+    },
+    "Response": {
+      "Status": {
+        "Code": 200,
+        "Message": "OK"
+      },
+      "ResponseHeaders": {
+        "Vary": "Accept-Encoding",
+        "X-Cloud-Trace-Context": "edefe59ecf6c8b79a81a038cd3c4edc6",
+        "Date": "Mon, 28 Sep 2020 05:29:40 GMT",
+        "Server": "Google,Frontend"
+      },
+      "ContentHeaders": {
+        "Content-Type": "application/json",
+        "Content-Length": "1243"
+      },
+      "Body": "[{\"artikelID\":106622200000,\"menge\":1},{\"artikelID\":109105400000,\"menge\":1},{\"artikelID\":111402000200,\"menge\":1},{\"artikelID\":111484500000,\"menge\":1},{\"artikelID\":111784005200,\"menge\":2},{\"artikelID\":113846500000,\"menge\":1},{\"artikelID\":114013700000,\"menge\":1},{\"artikelID\":114042100000,\"menge\":1},{\"artikelID\":115021100000,\"menge\":1},{\"artikelID\":130121000000,\"menge\":1},{\"artikelID\":204002600400,\"menge\":4},{\"artikelID\":204250000000,\"menge\":1},{\"artikelID\":204272000000,\"menge\":1},{\"artikelID\":205022000000,\"menge\":2},{\"artikelID\":210101408500,\"menge\":0.122},{\"artikelID\":210102024000,\"menge\":0.257},{\"artikelID\":210110024000,\"menge\":0.304},{\"artikelID\":210413602500,\"menge\":0.16},{\"artikelID\":210414002500,\"menge\":0.248},{\"artikelID\":210429242000,\"menge\":0.164},{\"artikelID\":210461944000,\"menge\":0.184},{\"artikelID\":210467042400,\"menge\":0.145},{\"artikelID\":220654030010,\"menge\":0.349},{\"artikelID\":227221020000,\"menge\":0.251},{\"artikelID\":230500250700,\"menge\":1},{\"artikelID\":231510982000,\"menge\":0.133},{\"artikelID\":263330501000,\"menge\":0.5},{\"artikelID\":263330801000,\"menge\":0.466},{\"artikelID\":264280301000,\"menge\":0.696},{\"artikelID\":271480902500,\"menge\":1},{\"artikelID\":274461002300,\"menge\":1},{\"artikelID\":274800501000,\"menge\":0.615}]\n",
+      "HttpVersion": "1.1"
+    },
+    "RecordedAt": "2020-09-28T07:29:40.576012+02:00"
+  },
+  {
+    "Request": {
+      "Method": "GET",
+      "URI": "https://hackzurich-api.migros.ch/hack/purchase/102222/201902-102222-0004/articles",
+      "RequestHeaders": {
+        "Api-Version": "7",
+        "Accept-Language": "de",
+        "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
+        "Request-Id": "|2b44b35b-4f96e4863436f4c1.14."
+      },
+      "ContentHeaders": {},
+      "Body": ""
+    },
+    "Response": {
+      "Status": {
+        "Code": 200,
+        "Message": "OK"
+      },
+      "ResponseHeaders": {
+        "Vary": "Accept-Encoding",
+        "X-Cloud-Trace-Context": "fd579185fe5fa01f0c9cce2d2e578dbb",
+        "Date": "Mon, 28 Sep 2020 05:29:44 GMT",
+        "Server": "Google,Frontend"
+      },
+      "ContentHeaders": {
+        "Content-Type": "application/json",
+        "Content-Length": "121"
+      },
+      "Body": "[{\"artikelID\":111471200200,\"menge\":1},{\"artikelID\":220624020011,\"menge\":0.221},{\"artikelID\":235320183000,\"menge\":0.104}]\n",
+      "HttpVersion": "1.1"
+    },
+    "RecordedAt": "2020-09-28T07:29:44.077087+02:00"
+  },
+  {
+    "Request": {
+      "Method": "GET",
+      "URI": "https://hackzurich-api.migros.ch/hack/purchase/102222/201903-102222-0001/articles",
+      "RequestHeaders": {
+        "Api-Version": "7",
+        "Accept-Language": "de",
+        "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
+        "Request-Id": "|2b44b35b-4f96e4863436f4c1.16."
+      },
+      "ContentHeaders": {},
+      "Body": ""
+    },
+    "Response": {
+      "Status": {
+        "Code": 200,
+        "Message": "OK"
+      },
+      "ResponseHeaders": {
+        "Vary": "Accept-Encoding",
+        "X-Cloud-Trace-Context": "bed09770d41315fa7ef573d4aa7d6285;o=1",
+        "Date": "Mon, 28 Sep 2020 05:29:47 GMT",
+        "Server": "Google,Frontend"
+      },
+      "ContentHeaders": {
+        "Content-Type": "application/json",
+        "Content-Length": "1758"
+      },
+      "Body": "[{\"artikelID\":102004000000,\"menge\":2},{\"artikelID\":104604100000,\"menge\":1},{\"artikelID\":106223300000,\"menge\":1},{\"artikelID\":106430000000,\"menge\":1},{\"artikelID\":107125700000,\"menge\":1},{\"artikelID\":107300700000,\"menge\":1},{\"artikelID\":107400700000,\"menge\":1},{\"artikelID\":109251000000,\"menge\":1},{\"artikelID\":110156400000,\"menge\":1},{\"artikelID\":111402000200,\"menge\":2},{\"artikelID\":111488600200,\"menge\":1},{\"artikelID\":111784005200,\"menge\":2},{\"artikelID\":114020100000,\"menge\":2},{\"artikelID\":115027000000,\"menge\":1},{\"artikelID\":122014100000,\"menge\":1},{\"artikelID\":196045000600,\"menge\":1},{\"artikelID\":200632100000,\"menge\":1},{\"artikelID\":204002600400,\"menge\":5},{\"artikelID\":204126100000,\"menge\":3},{\"artikelID\":204241700000,\"menge\":1},{\"artikelID\":204250000000,\"menge\":1},{\"artikelID\":204272000000,\"menge\":1},{\"artikelID\":210102024000,\"menge\":0.251},{\"artikelID\":210110024000,\"menge\":0.244},{\"artikelID\":210467442400,\"menge\":0.206},{\"artikelID\":212378900000,\"menge\":1},{\"artikelID\":220450000110,\"menge\":0.208},{\"artikelID\":220624020020,\"menge\":0.209},{\"artikelID\":220651525300,\"menge\":0.322},{\"artikelID\":220654030011,\"menge\":0.419},{\"artikelID\":230110600910,\"menge\":1},{\"artikelID\":231510581000,\"menge\":0.111},{\"artikelID\":231510981000,\"menge\":0.2},{\"artikelID\":260509601000,\"menge\":0.615},{\"artikelID\":263330901000,\"menge\":0.533},{\"artikelID\":270400509300,\"menge\":1},{\"artikelID\":270501902100,\"menge\":0.125},{\"artikelID\":270701313200,\"menge\":1},{\"artikelID\":274502501000,\"menge\":1.083},{\"artikelID\":274800501000,\"menge\":0.583},{\"artikelID\":275780313200,\"menge\":1},{\"artikelID\":501081500000,\"menge\":1},{\"artikelID\":502082300000,\"menge\":1},{\"artikelID\":512121200000,\"menge\":1},{\"artikelID\":513643200000,\"menge\":1},{\"artikelID\":520601800000,\"menge\":1}]\n",
+      "HttpVersion": "1.1"
+    },
+    "RecordedAt": "2020-09-28T07:29:47.178948+02:00"
   }
 ]

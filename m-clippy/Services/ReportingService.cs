@@ -23,18 +23,29 @@ namespace m_clippy.Services
         
         public static async Task<T> GetJsonAsync<T>(IConfiguration configuration, string url, string fileNameCache)
         {
-            var u = configuration["MigrosApiUsername"];
-            var p = configuration["MigrosApiPassword"];
-            
+            var migrosUserName = configuration["MigrosApiUsername"];
+            var migrosPassword = configuration["MigrosApiPassword"];
+
             // https://github.com/mleech/scotch
-            var httpClient = HttpClients.NewHttpClient($"./cassette/{fileNameCache}.json", Startup.GetScotchMode());
-            
+            try
+            {
+                var httpClient = HttpClients.NewHttpClient($"./cassette/{fileNameCache}.json", Startup.GetScotchMode());
+                return await GetResultFromHttpClientAsync<T>(url, migrosUserName, migrosPassword, httpClient);
+            }
+            catch (Exception e)
+            {
+                var httpClient = HttpClients.NewHttpClient($"./cassette/{fileNameCache}.json", Startup.GetScotchModeForceRecording());
+                return await GetResultFromHttpClientAsync<T>(url, migrosUserName, migrosPassword, httpClient);
+            }
+        }
+
+        private static async Task<T> GetResultFromHttpClientAsync<T>(string url, string migrosUserName, string migrosPassword, HttpClient httpClient)
+        {
             var cli = new FlurlClient(httpClient);
             var result = await cli.Request(url).WithHeader("Api-Version", "7")
                 .WithHeader("accept-language", "de")
-                .WithBasicAuth(u, p)
+                .WithBasicAuth(migrosUserName, migrosPassword)
                 .GetJsonAsync<T>();
-
             return result;
         }
 
