@@ -7,7 +7,7 @@
         "Api-Version": "7",
         "Accept-Language": "de",
         "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
-        "Request-Id": "|687e4b96-4753c2e492e9275b.2."
+        "Request-Id": "|281fb493-4c5bdc594fc99df0.2."
       },
       "ContentHeaders": {},
       "Body": ""
@@ -19,8 +19,8 @@
       },
       "ResponseHeaders": {
         "Vary": "Accept-Encoding",
-        "X-Cloud-Trace-Context": "419500d4b7bc6e47ed0bf97ad3e00a3f",
-        "Date": "Sun, 27 Sep 2020 18:51:11 GMT",
+        "X-Cloud-Trace-Context": "52e82ee64b2e4362857bbd3c164d71b4",
+        "Date": "Mon, 28 Sep 2020 05:00:20 GMT",
         "Server": "Google,Frontend"
       },
       "ContentHeaders": {
@@ -30,7 +30,7 @@
       "Body": "[{\"artikelID\":104223700000,\"menge\":1},{\"artikelID\":106050000000,\"menge\":1},{\"artikelID\":106530800000,\"menge\":1},{\"artikelID\":204008500000,\"menge\":2},{\"artikelID\":204150000000,\"menge\":1},{\"artikelID\":212380400000,\"menge\":2},{\"artikelID\":233000182000,\"menge\":0.138},{\"artikelID\":236055600000,\"menge\":0.202},{\"artikelID\":236055900000,\"menge\":0.208},{\"artikelID\":274401204100,\"menge\":0.595},{\"artikelID\":274502501000,\"menge\":1.159},{\"artikelID\":277107908400,\"menge\":1},{\"artikelID\":702920200040,\"menge\":2}]\n",
       "HttpVersion": "1.1"
     },
-    "RecordedAt": "2020-09-27T20:51:11.712091+02:00"
+    "RecordedAt": "2020-09-28T07:00:21.58174+02:00"
   },
   {
     "Request": {
@@ -40,7 +40,7 @@
         "Api-Version": "7",
         "Accept-Language": "de",
         "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
-        "Request-Id": "|687e4b96-4753c2e492e9275b.4."
+        "Request-Id": "|281fb493-4c5bdc594fc99df0.4."
       },
       "ContentHeaders": {},
       "Body": ""
@@ -52,8 +52,8 @@
       },
       "ResponseHeaders": {
         "Vary": "Accept-Encoding",
-        "X-Cloud-Trace-Context": "c1c710c43f47b4d25977eb3c51ce642f",
-        "Date": "Sun, 27 Sep 2020 18:51:13 GMT",
+        "X-Cloud-Trace-Context": "b71c409369481716ea0360ccf2bab86a",
+        "Date": "Mon, 28 Sep 2020 05:00:23 GMT",
         "Server": "Google,Frontend"
       },
       "ContentHeaders": {
@@ -63,7 +63,7 @@
       "Body": "[{\"artikelID\":104208000000,\"menge\":1},{\"artikelID\":104215000000,\"menge\":1},{\"artikelID\":130852900000,\"menge\":1},{\"artikelID\":273800502400,\"menge\":1},{\"artikelID\":275704702100,\"menge\":0.779},{\"artikelID\":502041600000,\"menge\":1},{\"artikelID\":702007500000,\"menge\":1},{\"artikelID\":703729300003,\"menge\":1},{\"artikelID\":730914100000,\"menge\":1}]\n",
       "HttpVersion": "1.1"
     },
-    "RecordedAt": "2020-09-27T20:51:13.357446+02:00"
+    "RecordedAt": "2020-09-28T07:00:24.165722+02:00"
   },
   {
     "Request": {
@@ -73,7 +73,7 @@
         "Api-Version": "7",
         "Accept-Language": "de",
         "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
-        "Request-Id": "|687e4b96-4753c2e492e9275b.6."
+        "Request-Id": "|281fb493-4c5bdc594fc99df0.6."
       },
       "ContentHeaders": {},
       "Body": ""
@@ -85,8 +85,8 @@
       },
       "ResponseHeaders": {
         "Vary": "Accept-Encoding",
-        "X-Cloud-Trace-Context": "3af4095657f460c2e8299f9fa565e5c0",
-        "Date": "Sun, 27 Sep 2020 18:51:14 GMT",
+        "X-Cloud-Trace-Context": "c642afb18b2fdeb9fe53c57912aca7f6",
+        "Date": "Mon, 28 Sep 2020 05:00:25 GMT",
         "Server": "Google,Frontend"
       },
       "ContentHeaders": {
@@ -96,7 +96,7 @@
       "Body": "[{\"artikelID\":100117600000,\"menge\":1},{\"artikelID\":100124500000,\"menge\":1},{\"artikelID\":102010200000,\"menge\":1},{\"artikelID\":104410600000,\"menge\":1},{\"artikelID\":106252300000,\"menge\":1},{\"artikelID\":111401400200,\"menge\":1},{\"artikelID\":113837200000,\"menge\":1},{\"artikelID\":150103000000,\"menge\":1},{\"artikelID\":151407000000,\"menge\":1},{\"artikelID\":204008500000,\"menge\":2},{\"artikelID\":212380400000,\"menge\":2},{\"artikelID\":232300183900,\"menge\":1},{\"artikelID\":730914100000,\"menge\":1}]\n",
       "HttpVersion": "1.1"
     },
-    "RecordedAt": "2020-09-27T20:51:14.449116+02:00"
+    "RecordedAt": "2020-09-28T07:00:26.035361+02:00"
   },
   {
     "Request": {
@@ -106,7 +106,7 @@
         "Api-Version": "7",
         "Accept-Language": "de",
         "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
-        "Request-Id": "|687e4b96-4753c2e492e9275b.8."
+        "Request-Id": "|281fb493-4c5bdc594fc99df0.8."
       },
       "ContentHeaders": {},
       "Body": ""
@@ -118,8 +118,8 @@
       },
       "ResponseHeaders": {
         "Vary": "Accept-Encoding",
-        "X-Cloud-Trace-Context": "3a71bbae40d5161df315a2e7e6b9bd17",
-        "Date": "Sun, 27 Sep 2020 18:51:15 GMT",
+        "X-Cloud-Trace-Context": "42e2a62431ebeaee646da3b9c6a177c6",
+        "Date": "Mon, 28 Sep 2020 05:00:27 GMT",
         "Server": "Google,Frontend"
       },
       "ContentHeaders": {
@@ -129,7 +129,7 @@
       "Body": "[{\"artikelID\":104208000000,\"menge\":1},{\"artikelID\":104217700000,\"menge\":1},{\"artikelID\":107121600000,\"menge\":1},{\"artikelID\":111455000200,\"menge\":1},{\"artikelID\":204008500000,\"menge\":1},{\"artikelID\":212380400000,\"menge\":2},{\"artikelID\":212406000000,\"menge\":1},{\"artikelID\":232302690000,\"menge\":0.126},{\"artikelID\":730904400000,\"menge\":1}]\n",
       "HttpVersion": "1.1"
     },
-    "RecordedAt": "2020-09-27T20:51:15.681553+02:00"
+    "RecordedAt": "2020-09-28T07:00:28.139814+02:00"
   },
   {
     "Request": {
@@ -139,7 +139,7 @@
         "Api-Version": "7",
         "Accept-Language": "de",
         "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
-        "Request-Id": "|687e4b96-4753c2e492e9275b.10."
+        "Request-Id": "|281fb493-4c5bdc594fc99df0.10."
       },
       "ContentHeaders": {},
       "Body": ""
@@ -151,8 +151,8 @@
       },
       "ResponseHeaders": {
         "Vary": "Accept-Encoding",
-        "X-Cloud-Trace-Context": "b0520a07d9c34b42352953957cc5f7bd",
-        "Date": "Sun, 27 Sep 2020 18:51:16 GMT",
+        "X-Cloud-Trace-Context": "4456f7062d21830ec85499b0decd2a19",
+        "Date": "Mon, 28 Sep 2020 05:00:29 GMT",
         "Server": "Google,Frontend"
       },
       "ContentHeaders": {
@@ -162,7 +162,7 @@
       "Body": "[{\"artikelID\":104208000000,\"menge\":1},{\"artikelID\":104223700000,\"menge\":1},{\"artikelID\":106224900000,\"menge\":1},{\"artikelID\":204008500000,\"menge\":2},{\"artikelID\":233000182000,\"menge\":0.068},{\"artikelID\":233001081910,\"menge\":0.097},{\"artikelID\":241212121000,\"menge\":0.504},{\"artikelID\":273800502400,\"menge\":2},{\"artikelID\":275704702100,\"menge\":0.889},{\"artikelID\":277180202400,\"menge\":1},{\"artikelID\":511086100000,\"menge\":1},{\"artikelID\":702920200040,\"menge\":3},{\"artikelID\":704110700000,\"menge\":1},{\"artikelID\":717926100000,\"menge\":1},{\"artikelID\":730904400000,\"menge\":1},{\"artikelID\":827912410520,\"menge\":1}]\n",
       "HttpVersion": "1.1"
     },
-    "RecordedAt": "2020-09-27T20:51:16.809386+02:00"
+    "RecordedAt": "2020-09-28T07:00:29.88993+02:00"
   },
   {
     "Request": {
@@ -172,7 +172,7 @@
         "Api-Version": "7",
         "Accept-Language": "de",
         "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
-        "Request-Id": "|687e4b96-4753c2e492e9275b.12."
+        "Request-Id": "|281fb493-4c5bdc594fc99df0.12."
       },
       "ContentHeaders": {},
       "Body": ""
@@ -184,8 +184,8 @@
       },
       "ResponseHeaders": {
         "Vary": "Accept-Encoding",
-        "X-Cloud-Trace-Context": "bf20a4cd8a2e137737d99aa333a516f9",
-        "Date": "Sun, 27 Sep 2020 18:51:18 GMT",
+        "X-Cloud-Trace-Context": "9255522bd12f82fd8e1d0fb61b049f0a;o=1",
+        "Date": "Mon, 28 Sep 2020 05:00:31 GMT",
         "Server": "Google,Frontend"
       },
       "ContentHeaders": {
@@ -195,7 +195,7 @@
       "Body": "[{\"artikelID\":104522200000,\"menge\":2},{\"artikelID\":106276200000,\"menge\":1},{\"artikelID\":107121600000,\"menge\":1},{\"artikelID\":152004900000,\"menge\":1},{\"artikelID\":156003400000,\"menge\":1},{\"artikelID\":156030100000,\"menge\":1},{\"artikelID\":156055100000,\"menge\":1},{\"artikelID\":204008500000,\"menge\":2},{\"artikelID\":212380400000,\"menge\":2},{\"artikelID\":277001913200,\"menge\":1},{\"artikelID\":702503500000,\"menge\":1},{\"artikelID\":704109300000,\"menge\":3},{\"artikelID\":730914200000,\"menge\":2}]\n",
       "HttpVersion": "1.1"
     },
-    "RecordedAt": "2020-09-27T20:51:17.976284+02:00"
+    "RecordedAt": "2020-09-28T07:00:32.017423+02:00"
   },
   {
     "Request": {
@@ -205,7 +205,7 @@
         "Api-Version": "7",
         "Accept-Language": "de",
         "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
-        "Request-Id": "|687e4b96-4753c2e492e9275b.14."
+        "Request-Id": "|281fb493-4c5bdc594fc99df0.14."
       },
       "ContentHeaders": {},
       "Body": ""
@@ -217,8 +217,8 @@
       },
       "ResponseHeaders": {
         "Vary": "Accept-Encoding",
-        "X-Cloud-Trace-Context": "1d8fb8ae4c787d8d0cacd26b132d01d6",
-        "Date": "Sun, 27 Sep 2020 18:51:19 GMT",
+        "X-Cloud-Trace-Context": "b7cb87b056ef594b0234fdce88925829",
+        "Date": "Mon, 28 Sep 2020 05:00:33 GMT",
         "Server": "Google,Frontend"
       },
       "ContentHeaders": {
@@ -228,7 +228,7 @@
       "Body": "[{\"artikelID\":100124500000,\"menge\":1},{\"artikelID\":104135100000,\"menge\":1},{\"artikelID\":104215000000,\"menge\":1},{\"artikelID\":110190100000,\"menge\":1},{\"artikelID\":110435100000,\"menge\":1},{\"artikelID\":730904400000,\"menge\":1}]\n",
       "HttpVersion": "1.1"
     },
-    "RecordedAt": "2020-09-27T20:51:19.20862+02:00"
+    "RecordedAt": "2020-09-28T07:00:34.221878+02:00"
   },
   {
     "Request": {
@@ -238,7 +238,7 @@
         "Api-Version": "7",
         "Accept-Language": "de",
         "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
-        "Request-Id": "|687e4b96-4753c2e492e9275b.16."
+        "Request-Id": "|281fb493-4c5bdc594fc99df0.16."
       },
       "ContentHeaders": {},
       "Body": ""
@@ -250,8 +250,8 @@
       },
       "ResponseHeaders": {
         "Vary": "Accept-Encoding",
-        "X-Cloud-Trace-Context": "4f4f6c5462ff90ec8c95f919c5936b61",
-        "Date": "Sun, 27 Sep 2020 18:51:20 GMT",
+        "X-Cloud-Trace-Context": "e1d74a3df8aa133610b3f98053c92eee",
+        "Date": "Mon, 28 Sep 2020 05:00:34 GMT",
         "Server": "Google,Frontend"
       },
       "ContentHeaders": {
@@ -261,7 +261,7 @@
       "Body": "[{\"artikelID\":100118900000,\"menge\":1},{\"artikelID\":101311500000,\"menge\":2},{\"artikelID\":103337000000,\"menge\":1},{\"artikelID\":104222300000,\"menge\":1},{\"artikelID\":107179900000,\"menge\":2},{\"artikelID\":204008500000,\"menge\":2},{\"artikelID\":212380400000,\"menge\":1},{\"artikelID\":212380500000,\"menge\":1},{\"artikelID\":220262000092,\"menge\":0.152},{\"artikelID\":241212121000,\"menge\":0.61},{\"artikelID\":273800502400,\"menge\":2},{\"artikelID\":275704702100,\"menge\":1.155},{\"artikelID\":277180202400,\"menge\":1},{\"artikelID\":730918000000,\"menge\":2}]\n",
       "HttpVersion": "1.1"
     },
-    "RecordedAt": "2020-09-27T20:51:20.576184+02:00"
+    "RecordedAt": "2020-09-28T07:00:35.762417+02:00"
   },
   {
     "Request": {
@@ -271,7 +271,7 @@
         "Api-Version": "7",
         "Accept-Language": "de",
         "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
-        "Request-Id": "|687e4b8f-4753c2e492e9275b.2."
+        "Request-Id": "|281fb490-4c5bdc594fc99df0.2."
       },
       "ContentHeaders": {},
       "Body": ""
@@ -283,8 +283,8 @@
       },
       "ResponseHeaders": {
         "Vary": "Accept-Encoding",
-        "X-Cloud-Trace-Context": "1e7a1e99a551f67e966c0e12d01b2355",
-        "Date": "Sun, 27 Sep 2020 18:49:57 GMT",
+        "X-Cloud-Trace-Context": "4f5d134bc28056565240de4309fda533",
+        "Date": "Mon, 28 Sep 2020 04:59:07 GMT",
         "Server": "Google,Frontend"
       },
       "ContentHeaders": {
@@ -294,7 +294,7 @@
       "Body": "[{\"artikelID\":104403900000,\"menge\":1},{\"artikelID\":105317800000,\"menge\":1},{\"artikelID\":105331000000,\"menge\":1},{\"artikelID\":105351200000,\"menge\":1},{\"artikelID\":105354000000,\"menge\":1},{\"artikelID\":105379000000,\"menge\":1},{\"artikelID\":105396000000,\"menge\":2},{\"artikelID\":106129000000,\"menge\":1},{\"artikelID\":107060900000,\"menge\":1},{\"artikelID\":110169300000,\"menge\":1},{\"artikelID\":110172200000,\"menge\":1},{\"artikelID\":131120500000,\"menge\":1},{\"artikelID\":131125100000,\"menge\":1},{\"artikelID\":152131000000,\"menge\":1},{\"artikelID\":200604100000,\"menge\":1},{\"artikelID\":200604300000,\"menge\":2},{\"artikelID\":200802300000,\"menge\":5},{\"artikelID\":205001800000,\"menge\":2},{\"artikelID\":212515100000,\"menge\":1},{\"artikelID\":233510028010,\"menge\":0.217},{\"artikelID\":241102800500,\"menge\":0.386},{\"artikelID\":252008600000,\"menge\":1},{\"artikelID\":260275001000,\"menge\":1.202},{\"artikelID\":263330401000,\"menge\":0.915},{\"artikelID\":263602713200,\"menge\":1},{\"artikelID\":264200301000,\"menge\":0.365},{\"artikelID\":264400504200,\"menge\":1},{\"artikelID\":264500313200,\"menge\":2},{\"artikelID\":264802101000,\"menge\":0.5},{\"artikelID\":265606702300,\"menge\":2},{\"artikelID\":266070109300,\"menge\":1},{\"artikelID\":271703301000,\"menge\":0.5},{\"artikelID\":274460002300,\"menge\":1},{\"artikelID\":276500508300,\"menge\":1},{\"artikelID\":501111100000,\"menge\":1},{\"artikelID\":502006200000,\"menge\":1},{\"artikelID\":513301900000,\"menge\":1},{\"artikelID\":527202000000,\"menge\":1}]\n",
       "HttpVersion": "1.1"
     },
-    "RecordedAt": "2020-09-27T20:49:57.679832+02:00"
+    "RecordedAt": "2020-09-28T06:59:07.848119+02:00"
   },
   {
     "Request": {
@@ -304,7 +304,7 @@
         "Api-Version": "7",
         "Accept-Language": "de",
         "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
-        "Request-Id": "|687e4b8f-4753c2e492e9275b.4."
+        "Request-Id": "|281fb490-4c5bdc594fc99df0.4."
       },
       "ContentHeaders": {},
       "Body": ""
@@ -316,8 +316,8 @@
       },
       "ResponseHeaders": {
         "Vary": "Accept-Encoding",
-        "X-Cloud-Trace-Context": "e1cbf70a8e212c0fd803ab59b3f01ee7;o=1",
-        "Date": "Sun, 27 Sep 2020 18:50:19 GMT",
+        "X-Cloud-Trace-Context": "f774d729db189810d8fd40f64300cbe6",
+        "Date": "Mon, 28 Sep 2020 04:59:09 GMT",
         "Server": "Google,Frontend"
       },
       "ContentHeaders": {
@@ -327,7 +327,7 @@
       "Body": "[{\"artikelID\":101575000000,\"menge\":1},{\"artikelID\":103001000000,\"menge\":1},{\"artikelID\":104207000000,\"menge\":1},{\"artikelID\":104278100000,\"menge\":1},{\"artikelID\":105317800000,\"menge\":1},{\"artikelID\":105351200000,\"menge\":1},{\"artikelID\":105354000000,\"menge\":1},{\"artikelID\":105362300000,\"menge\":1},{\"artikelID\":105396000000,\"menge\":1},{\"artikelID\":106129000000,\"menge\":1},{\"artikelID\":106253800000,\"menge\":1},{\"artikelID\":106409000000,\"menge\":1},{\"artikelID\":131120500000,\"menge\":1},{\"artikelID\":152131000000,\"menge\":1},{\"artikelID\":153211000000,\"menge\":1},{\"artikelID\":158575900000,\"menge\":1},{\"artikelID\":161426000000,\"menge\":1},{\"artikelID\":161430600000,\"menge\":1},{\"artikelID\":161644200000,\"menge\":1},{\"artikelID\":166004300000,\"menge\":1},{\"artikelID\":196042501000,\"menge\":1},{\"artikelID\":200604100000,\"menge\":1},{\"artikelID\":200604300000,\"menge\":1},{\"artikelID\":200609700000,\"menge\":1},{\"artikelID\":200802300000,\"menge\":5},{\"artikelID\":204115100000,\"menge\":1},{\"artikelID\":204141200000,\"menge\":1},{\"artikelID\":204225000000,\"menge\":1},{\"artikelID\":204241600000,\"menge\":2},{\"artikelID\":212595100000,\"menge\":1},{\"artikelID\":220220020000,\"menge\":0.45},{\"artikelID\":232300184000,\"menge\":0.065},{\"artikelID\":235320183000,\"menge\":0.142},{\"artikelID\":252008600000,\"menge\":1},{\"artikelID\":260275001000,\"menge\":0.774},{\"artikelID\":262400901000,\"menge\":0.462},{\"artikelID\":263600701000,\"menge\":1.165},{\"artikelID\":264200301000,\"menge\":0.212},{\"artikelID\":264400504200,\"menge\":1},{\"artikelID\":264500313200,\"menge\":1},{\"artikelID\":264601302600,\"menge\":1},{\"artikelID\":265606702300,\"menge\":2},{\"artikelID\":266070109300,\"menge\":1},{\"artikelID\":271102509200,\"menge\":1},{\"artikelID\":271500513200,\"menge\":2},{\"artikelID\":271703301000,\"menge\":0.458},{\"artikelID\":273708902100,\"menge\":0.99},{\"artikelID\":274450002300,\"menge\":1},{\"artikelID\":275704502300,\"menge\":1},{\"artikelID\":501107300000,\"menge\":1},{\"artikelID\":514160100000,\"menge\":1},{\"artikelID\":514629300000,\"menge\":1},{\"artikelID\":526122600000,\"menge\":1},{\"artikelID\":704504700000,\"menge\":2},{\"artikelID\":815324424120,\"menge\":2}]\n",
       "HttpVersion": "1.1"
     },
-    "RecordedAt": "2020-09-27T20:50:20.008413+02:00"
+    "RecordedAt": "2020-09-28T06:59:10.482252+02:00"
   },
   {
     "Request": {
@@ -337,7 +337,7 @@
         "Api-Version": "7",
         "Accept-Language": "de",
         "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
-        "Request-Id": "|687e4b8f-4753c2e492e9275b.6."
+        "Request-Id": "|281fb490-4c5bdc594fc99df0.6."
       },
       "ContentHeaders": {},
       "Body": ""
@@ -349,8 +349,8 @@
       },
       "ResponseHeaders": {
         "Vary": "Accept-Encoding",
-        "X-Cloud-Trace-Context": "a096faf23afb8d205202c3ab7870ee2f",
-        "Date": "Sun, 27 Sep 2020 18:50:21 GMT",
+        "X-Cloud-Trace-Context": "72d84676fc0ebc09def2668028720a0e",
+        "Date": "Mon, 28 Sep 2020 04:59:12 GMT",
         "Server": "Google,Frontend"
       },
       "ContentHeaders": {
@@ -360,7 +360,7 @@
       "Body": "[{\"artikelID\":100100500000,\"menge\":1},{\"artikelID\":104611000000,\"menge\":1},{\"artikelID\":105317800000,\"menge\":1},{\"artikelID\":105354000000,\"menge\":1},{\"artikelID\":105396000000,\"menge\":1},{\"artikelID\":131120500000,\"menge\":1},{\"artikelID\":156084500000,\"menge\":1},{\"artikelID\":158575900000,\"menge\":1},{\"artikelID\":158577800000,\"menge\":1},{\"artikelID\":161405200000,\"menge\":1},{\"artikelID\":161642100000,\"menge\":1},{\"artikelID\":161644000000,\"menge\":1},{\"artikelID\":196042501000,\"menge\":1},{\"artikelID\":200604100000,\"menge\":2},{\"artikelID\":200604300000,\"menge\":1},{\"artikelID\":200802300000,\"menge\":4},{\"artikelID\":200803100000,\"menge\":1},{\"artikelID\":204016300000,\"menge\":2},{\"artikelID\":204141000000,\"menge\":1},{\"artikelID\":204141200000,\"menge\":1},{\"artikelID\":204225000000,\"menge\":1},{\"artikelID\":204241600000,\"menge\":1},{\"artikelID\":212515100000,\"menge\":1},{\"artikelID\":231510582000,\"menge\":0.128},{\"artikelID\":232300184000,\"menge\":0.063},{\"artikelID\":251317100100,\"menge\":1},{\"artikelID\":262400901000,\"menge\":0.663},{\"artikelID\":263330401000,\"menge\":1.169},{\"artikelID\":263500513200,\"menge\":1},{\"artikelID\":263600701000,\"menge\":0.405},{\"artikelID\":264500313200,\"menge\":3},{\"artikelID\":264617513200,\"menge\":1},{\"artikelID\":265606702300,\"menge\":2},{\"artikelID\":266070109300,\"menge\":1},{\"artikelID\":271102509200,\"menge\":1},{\"artikelID\":271703301000,\"menge\":0.568},{\"artikelID\":273808709200,\"menge\":1},{\"artikelID\":275600702100,\"menge\":0.338},{\"artikelID\":275704502300,\"menge\":1},{\"artikelID\":526220900000,\"menge\":1}]\n",
       "HttpVersion": "1.1"
     },
-    "RecordedAt": "2020-09-27T20:50:21.381399+02:00"
+    "RecordedAt": "2020-09-28T06:59:13.062384+02:00"
   },
   {
     "Request": {
@@ -370,7 +370,7 @@
         "Api-Version": "7",
         "Accept-Language": "de",
         "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
-        "Request-Id": "|687e4b8f-4753c2e492e9275b.8."
+        "Request-Id": "|281fb490-4c5bdc594fc99df0.8."
       },
       "ContentHeaders": {},
       "Body": ""
@@ -382,8 +382,8 @@
       },
       "ResponseHeaders": {
         "Vary": "Accept-Encoding",
-        "X-Cloud-Trace-Context": "e3a1717bb69517f0cf79670b0bc47d1d",
-        "Date": "Sun, 27 Sep 2020 18:50:23 GMT",
+        "X-Cloud-Trace-Context": "f3a40457ff186dae26c1f9dcbd9ff21b",
+        "Date": "Mon, 28 Sep 2020 04:59:14 GMT",
         "Server": "Google,Frontend"
       },
       "ContentHeaders": {
@@ -393,7 +393,7 @@
       "Body": "[{\"artikelID\":104613800000,\"menge\":1},{\"artikelID\":111011900000,\"menge\":1},{\"artikelID\":115002700000,\"menge\":1},{\"artikelID\":241102801700,\"menge\":1},{\"artikelID\":264200301000,\"menge\":0.365},{\"artikelID\":264500313200,\"menge\":2}]\n",
       "HttpVersion": "1.1"
     },
-    "RecordedAt": "2020-09-27T20:50:23.388313+02:00"
+    "RecordedAt": "2020-09-28T06:59:15.311282+02:00"
   },
   {
     "Request": {
@@ -403,7 +403,7 @@
         "Api-Version": "7",
         "Accept-Language": "de",
         "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
-        "Request-Id": "|687e4b8f-4753c2e492e9275b.10."
+        "Request-Id": "|281fb490-4c5bdc594fc99df0.10."
       },
       "ContentHeaders": {},
       "Body": ""
@@ -415,8 +415,8 @@
       },
       "ResponseHeaders": {
         "Vary": "Accept-Encoding",
-        "X-Cloud-Trace-Context": "de463192760554438bc7e67d74ae226a",
-        "Date": "Sun, 27 Sep 2020 18:50:24 GMT",
+        "X-Cloud-Trace-Context": "82ea98ee223e7755df827c50dd401081",
+        "Date": "Mon, 28 Sep 2020 04:59:16 GMT",
         "Server": "Google,Frontend"
       },
       "ContentHeaders": {
@@ -426,7 +426,7 @@
       "Body": "[{\"artikelID\":103333000000,\"menge\":1},{\"artikelID\":103526500000,\"menge\":1},{\"artikelID\":104207000000,\"menge\":1},{\"artikelID\":104613800000,\"menge\":2},{\"artikelID\":105319100000,\"menge\":1},{\"artikelID\":105354000000,\"menge\":1},{\"artikelID\":105396000000,\"menge\":1},{\"artikelID\":158575900000,\"menge\":1},{\"artikelID\":158576000000,\"menge\":1},{\"artikelID\":161426000000,\"menge\":1},{\"artikelID\":200604300000,\"menge\":2},{\"artikelID\":200802300000,\"menge\":7},{\"artikelID\":204016300000,\"menge\":1},{\"artikelID\":204141200000,\"menge\":1},{\"artikelID\":204241700000,\"menge\":2},{\"artikelID\":205001800000,\"menge\":2},{\"artikelID\":264802101000,\"menge\":0.427},{\"artikelID\":265606702300,\"menge\":1},{\"artikelID\":266070101000,\"menge\":0.214},{\"artikelID\":513005000000,\"menge\":1},{\"artikelID\":520120000000,\"menge\":1},{\"artikelID\":525023400000,\"menge\":1},{\"artikelID\":720503600030,\"menge\":1}]\n",
       "HttpVersion": "1.1"
     },
-    "RecordedAt": "2020-09-27T20:50:24.40875+02:00"
+    "RecordedAt": "2020-09-28T06:59:17.146611+02:00"
   },
   {
     "Request": {
@@ -436,7 +436,7 @@
         "Api-Version": "7",
         "Accept-Language": "de",
         "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
-        "Request-Id": "|687e4b8f-4753c2e492e9275b.12."
+        "Request-Id": "|281fb490-4c5bdc594fc99df0.12."
       },
       "ContentHeaders": {},
       "Body": ""
@@ -448,8 +448,8 @@
       },
       "ResponseHeaders": {
         "Vary": "Accept-Encoding",
-        "X-Cloud-Trace-Context": "ba565ccc4cf39c48c0b2437f1d730b53",
-        "Date": "Sun, 27 Sep 2020 18:50:25 GMT",
+        "X-Cloud-Trace-Context": "37016d5aea822678e7eeee3b14994456;o=1",
+        "Date": "Mon, 28 Sep 2020 04:59:18 GMT",
         "Server": "Google,Frontend"
       },
       "ContentHeaders": {
@@ -459,7 +459,7 @@
       "Body": "[{\"artikelID\":104207000000,\"menge\":1},{\"artikelID\":104613800000,\"menge\":1},{\"artikelID\":105319100000,\"menge\":1},{\"artikelID\":105331000000,\"menge\":1},{\"artikelID\":105351200000,\"menge\":1},{\"artikelID\":106129000000,\"menge\":1},{\"artikelID\":106409000000,\"menge\":1},{\"artikelID\":110127800000,\"menge\":1},{\"artikelID\":115002700000,\"menge\":1},{\"artikelID\":151003700000,\"menge\":1},{\"artikelID\":200802300000,\"menge\":6},{\"artikelID\":204016300000,\"menge\":1},{\"artikelID\":204141200000,\"menge\":1},{\"artikelID\":231513081000,\"menge\":0.171},{\"artikelID\":232300184000,\"menge\":0.063},{\"artikelID\":264200301000,\"menge\":0.231},{\"artikelID\":265606702300,\"menge\":1},{\"artikelID\":266070109300,\"menge\":1},{\"artikelID\":274460003300,\"menge\":1},{\"artikelID\":274800501000,\"menge\":0.622},{\"artikelID\":514160100000,\"menge\":1},{\"artikelID\":526801200000,\"menge\":1},{\"artikelID\":720503600030,\"menge\":1}]\n",
       "HttpVersion": "1.1"
     },
-    "RecordedAt": "2020-09-27T20:50:25.601039+02:00"
+    "RecordedAt": "2020-09-28T06:59:19.212281+02:00"
   },
   {
     "Request": {
@@ -469,7 +469,7 @@
         "Api-Version": "7",
         "Accept-Language": "de",
         "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
-        "Request-Id": "|687e4b8f-4753c2e492e9275b.14."
+        "Request-Id": "|281fb490-4c5bdc594fc99df0.14."
       },
       "ContentHeaders": {},
       "Body": ""
@@ -481,8 +481,8 @@
       },
       "ResponseHeaders": {
         "Vary": "Accept-Encoding",
-        "X-Cloud-Trace-Context": "e4a4c3cb1f6226544c47701d22769248",
-        "Date": "Sun, 27 Sep 2020 18:50:27 GMT",
+        "X-Cloud-Trace-Context": "3b3326911befa7eda06ed7bfcc8226ad",
+        "Date": "Mon, 28 Sep 2020 04:59:20 GMT",
         "Server": "Google,Frontend"
       },
       "ContentHeaders": {
@@ -492,7 +492,7 @@
       "Body": "[{\"artikelID\":101402800000,\"menge\":1},{\"artikelID\":101575000000,\"menge\":1},{\"artikelID\":103333000000,\"menge\":1},{\"artikelID\":104404600000,\"menge\":1},{\"artikelID\":105311200000,\"menge\":1},{\"artikelID\":105319100000,\"menge\":1},{\"artikelID\":105351200000,\"menge\":1},{\"artikelID\":105354000000,\"menge\":1},{\"artikelID\":106409000000,\"menge\":1},{\"artikelID\":107060900000,\"menge\":1},{\"artikelID\":131120500000,\"menge\":1},{\"artikelID\":155133700000,\"menge\":1},{\"artikelID\":158575900000,\"menge\":1},{\"artikelID\":161426000000,\"menge\":1},{\"artikelID\":196042501000,\"menge\":1},{\"artikelID\":200604100000,\"menge\":2},{\"artikelID\":200604300000,\"menge\":2},{\"artikelID\":200802300000,\"menge\":6},{\"artikelID\":204016300000,\"menge\":1},{\"artikelID\":204141200000,\"menge\":1},{\"artikelID\":204225000000,\"menge\":1},{\"artikelID\":210418726000,\"menge\":0.393},{\"artikelID\":212595100000,\"menge\":1},{\"artikelID\":231502481000,\"menge\":0.185},{\"artikelID\":231525582300,\"menge\":0.146},{\"artikelID\":232317081000,\"menge\":0.105},{\"artikelID\":251361100000,\"menge\":1},{\"artikelID\":252008600000,\"menge\":1},{\"artikelID\":260215701000,\"menge\":0.929},{\"artikelID\":263330501000,\"menge\":1.303},{\"artikelID\":264200301000,\"menge\":0.269},{\"artikelID\":264580113200,\"menge\":1},{\"artikelID\":264802101000,\"menge\":0.452},{\"artikelID\":265606702300,\"menge\":1},{\"artikelID\":266070109300,\"menge\":1},{\"artikelID\":271102509200,\"menge\":1},{\"artikelID\":271600501000,\"menge\":0.458},{\"artikelID\":271708513200,\"menge\":1},{\"artikelID\":271802302500,\"menge\":1},{\"artikelID\":273708902100,\"menge\":1.133},{\"artikelID\":275704502300,\"menge\":1},{\"artikelID\":277318102200,\"menge\":1},{\"artikelID\":502010100000,\"menge\":1}]\n",
       "HttpVersion": "1.1"
     },
-    "RecordedAt": "2020-09-27T20:50:26.906792+02:00"
+    "RecordedAt": "2020-09-28T06:59:21.080967+02:00"
   },
   {
     "Request": {
@@ -502,7 +502,7 @@
         "Api-Version": "7",
         "Accept-Language": "de",
         "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
-        "Request-Id": "|687e4b8f-4753c2e492e9275b.16."
+        "Request-Id": "|281fb490-4c5bdc594fc99df0.16."
       },
       "ContentHeaders": {},
       "Body": ""
@@ -514,8 +514,8 @@
       },
       "ResponseHeaders": {
         "Vary": "Accept-Encoding",
-        "X-Cloud-Trace-Context": "3a3d9140f2a3244c6cabfcb977ce6992",
-        "Date": "Sun, 27 Sep 2020 18:50:28 GMT",
+        "X-Cloud-Trace-Context": "2d39fe4c07eb32d212a12711069a5b0a",
+        "Date": "Mon, 28 Sep 2020 04:59:22 GMT",
         "Server": "Google,Frontend"
       },
       "ContentHeaders": {
@@ -525,7 +525,7 @@
       "Body": "[{\"artikelID\":101136500000,\"menge\":1},{\"artikelID\":102000400000,\"menge\":1},{\"artikelID\":104207000000,\"menge\":1},{\"artikelID\":104402500000,\"menge\":1},{\"artikelID\":104468100000,\"menge\":1},{\"artikelID\":104611000000,\"menge\":1},{\"artikelID\":105319100000,\"menge\":1},{\"artikelID\":105351200000,\"menge\":1},{\"artikelID\":105354000000,\"menge\":1},{\"artikelID\":106409000000,\"menge\":1},{\"artikelID\":107060900000,\"menge\":1},{\"artikelID\":110127800000,\"menge\":1},{\"artikelID\":110168600000,\"menge\":1},{\"artikelID\":110505100000,\"menge\":1},{\"artikelID\":131051200000,\"menge\":1},{\"artikelID\":152131000000,\"menge\":1},{\"artikelID\":153228000000,\"menge\":1},{\"artikelID\":156084500000,\"menge\":1},{\"artikelID\":158575900000,\"menge\":1},{\"artikelID\":161426000000,\"menge\":1},{\"artikelID\":161619600000,\"menge\":1},{\"artikelID\":196042501000,\"menge\":1},{\"artikelID\":200604100000,\"menge\":1},{\"artikelID\":200604300000,\"menge\":2},{\"artikelID\":200609600000,\"menge\":1},{\"artikelID\":200802300000,\"menge\":5},{\"artikelID\":204016300000,\"menge\":1},{\"artikelID\":204115100000,\"menge\":2},{\"artikelID\":204141200000,\"menge\":1},{\"artikelID\":204225000000,\"menge\":1},{\"artikelID\":210151600000,\"menge\":1},{\"artikelID\":210501800000,\"menge\":1},{\"artikelID\":212380700000,\"menge\":1},{\"artikelID\":220224020010,\"menge\":0.298},{\"artikelID\":220860055892,\"menge\":0.393},{\"artikelID\":231502381110,\"menge\":0.152},{\"artikelID\":232317081000,\"menge\":0.071},{\"artikelID\":233527090010,\"menge\":0.276},{\"artikelID\":251361100000,\"menge\":1},{\"artikelID\":252008600000,\"menge\":1},{\"artikelID\":260238501000,\"menge\":0.882},{\"artikelID\":262400901000,\"menge\":0.515},{\"artikelID\":263330401000,\"menge\":1.237},{\"artikelID\":264400702500,\"menge\":1},{\"artikelID\":264500313200,\"menge\":1},{\"artikelID\":264617513200,\"menge\":1},{\"artikelID\":265606702300,\"menge\":1},{\"artikelID\":266070109300,\"menge\":1},{\"artikelID\":271102509200,\"menge\":1},{\"artikelID\":271703301000,\"menge\":0.629},{\"artikelID\":273808109300,\"menge\":1},{\"artikelID\":275704502300,\"menge\":1},{\"artikelID\":526220900000,\"menge\":1},{\"artikelID\":704546600000,\"menge\":1}]\n",
       "HttpVersion": "1.1"
     },
-    "RecordedAt": "2020-09-27T20:50:28.211187+02:00"
+    "RecordedAt": "2020-09-28T06:59:23.11127+02:00"
   },
   {
     "Request": {
@@ -535,7 +535,7 @@
         "Api-Version": "7",
         "Accept-Language": "de",
         "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
-        "Request-Id": "|687e4b92-4753c2e492e9275b.2."
+        "Request-Id": "|281fb492-4c5bdc594fc99df0.2."
       },
       "ContentHeaders": {},
       "Body": ""
@@ -547,8 +547,8 @@
       },
       "ResponseHeaders": {
         "Vary": "Accept-Encoding",
-        "X-Cloud-Trace-Context": "8ea68f473e8af33cf707875b0636158c",
-        "Date": "Sun, 27 Sep 2020 18:50:48 GMT",
+        "X-Cloud-Trace-Context": "9571418546c73864edd0f3845fe8cea0",
+        "Date": "Mon, 28 Sep 2020 04:59:41 GMT",
         "Server": "Google,Frontend"
       },
       "ContentHeaders": {
@@ -558,7 +558,7 @@
       "Body": "[{\"artikelID\":706977000084,\"menge\":1},{\"artikelID\":721491000000,\"menge\":1},{\"artikelID\":722014400004,\"menge\":1}]\n",
       "HttpVersion": "1.1"
     },
-    "RecordedAt": "2020-09-27T20:50:47.960935+02:00"
+    "RecordedAt": "2020-09-28T06:59:41.958025+02:00"
   },
   {
     "Request": {
@@ -568,7 +568,7 @@
         "Api-Version": "7",
         "Accept-Language": "de",
         "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
-        "Request-Id": "|687e4b92-4753c2e492e9275b.4."
+        "Request-Id": "|281fb492-4c5bdc594fc99df0.4."
       },
       "ContentHeaders": {},
       "Body": ""
@@ -580,8 +580,8 @@
       },
       "ResponseHeaders": {
         "Vary": "Accept-Encoding",
-        "X-Cloud-Trace-Context": "7a0324faff7b29261af2c617c9eca2df",
-        "Date": "Sun, 27 Sep 2020 18:50:48 GMT",
+        "X-Cloud-Trace-Context": "2d50b33ec8b6c31bb208ffb0ea296c0c",
+        "Date": "Mon, 28 Sep 2020 04:59:42 GMT",
         "Server": "Google,Frontend"
       },
       "ContentHeaders": {
@@ -591,7 +591,7 @@
       "Body": "[{\"artikelID\":101347500000,\"menge\":1},{\"artikelID\":101582200000,\"menge\":1},{\"artikelID\":101958100000,\"menge\":1},{\"artikelID\":106267200000,\"menge\":2},{\"artikelID\":109031000000,\"menge\":1},{\"artikelID\":110300100000,\"menge\":1},{\"artikelID\":111761805200,\"menge\":2},{\"artikelID\":111770705200,\"menge\":1},{\"artikelID\":111913900000,\"menge\":1},{\"artikelID\":111922400000,\"menge\":1},{\"artikelID\":111944100000,\"menge\":1},{\"artikelID\":111945700000,\"menge\":1},{\"artikelID\":113802600000,\"menge\":1},{\"artikelID\":130312100000,\"menge\":1},{\"artikelID\":130531200000,\"menge\":1},{\"artikelID\":130980900000,\"menge\":1},{\"artikelID\":157272100000,\"menge\":1},{\"artikelID\":166004300000,\"menge\":2},{\"artikelID\":204512200000,\"menge\":4},{\"artikelID\":205245000000,\"menge\":2},{\"artikelID\":212430300000,\"menge\":3},{\"artikelID\":220651518400,\"menge\":0.179},{\"artikelID\":227250012300,\"menge\":0.234},{\"artikelID\":230500255000,\"menge\":1},{\"artikelID\":233110185000,\"menge\":0.082},{\"artikelID\":238936300000,\"menge\":2},{\"artikelID\":263330901000,\"menge\":0.333},{\"artikelID\":263405501000,\"menge\":0.431},{\"artikelID\":264200301000,\"menge\":0.808},{\"artikelID\":264802101000,\"menge\":0.476},{\"artikelID\":270601202300,\"menge\":1},{\"artikelID\":271500513200,\"menge\":1},{\"artikelID\":274502501000,\"menge\":0.455},{\"artikelID\":502088400000,\"menge\":1},{\"artikelID\":706235300000,\"menge\":1}]\n",
       "HttpVersion": "1.1"
     },
-    "RecordedAt": "2020-09-27T20:50:48.787816+02:00"
+    "RecordedAt": "2020-09-28T06:59:43.55924+02:00"
   },
   {
     "Request": {
@@ -601,7 +601,7 @@
         "Api-Version": "7",
         "Accept-Language": "de",
         "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
-        "Request-Id": "|687e4b92-4753c2e492e9275b.6."
+        "Request-Id": "|281fb492-4c5bdc594fc99df0.6."
       },
       "ContentHeaders": {},
       "Body": ""
@@ -613,8 +613,8 @@
       },
       "ResponseHeaders": {
         "Vary": "Accept-Encoding",
-        "X-Cloud-Trace-Context": "4e46a84e55c7c147f8fc592f7ece049b",
-        "Date": "Sun, 27 Sep 2020 18:50:50 GMT",
+        "X-Cloud-Trace-Context": "d92603904ba4ca683ece21fe5e389657",
+        "Date": "Mon, 28 Sep 2020 04:59:44 GMT",
         "Server": "Google,Frontend"
       },
       "ContentHeaders": {
@@ -624,7 +624,7 @@
       "Body": "[{\"artikelID\":101347500000,\"menge\":1},{\"artikelID\":101410100000,\"menge\":1},{\"artikelID\":111770705200,\"menge\":1},{\"artikelID\":130312100000,\"menge\":1},{\"artikelID\":130536300000,\"menge\":1},{\"artikelID\":130566600000,\"menge\":1},{\"artikelID\":130572000000,\"menge\":1},{\"artikelID\":130900200000,\"menge\":1},{\"artikelID\":130912300000,\"menge\":1},{\"artikelID\":161644200000,\"menge\":1},{\"artikelID\":196041401200,\"menge\":1},{\"artikelID\":200616700000,\"menge\":1},{\"artikelID\":204020600000,\"menge\":2},{\"artikelID\":205365200000,\"menge\":1},{\"artikelID\":210134100000,\"menge\":1},{\"artikelID\":220658200010,\"menge\":0.25},{\"artikelID\":238936300000,\"menge\":1},{\"artikelID\":241212700000,\"menge\":0.204},{\"artikelID\":243996125000,\"menge\":1},{\"artikelID\":260206101000,\"menge\":0.897},{\"artikelID\":263405501000,\"menge\":0.586},{\"artikelID\":264200301000,\"menge\":0.962},{\"artikelID\":264400613200,\"menge\":2},{\"artikelID\":264802101000,\"menge\":0.429},{\"artikelID\":271413502300,\"menge\":1},{\"artikelID\":271500513200,\"menge\":2},{\"artikelID\":274502501000,\"menge\":0.295},{\"artikelID\":275700501000,\"menge\":0.662},{\"artikelID\":276600513200,\"menge\":3},{\"artikelID\":526194700000,\"menge\":1},{\"artikelID\":704515100000,\"menge\":1}]\n",
       "HttpVersion": "1.1"
     },
-    "RecordedAt": "2020-09-27T20:50:50.054808+02:00"
+    "RecordedAt": "2020-09-28T06:59:45.651456+02:00"
   },
   {
     "Request": {
@@ -634,7 +634,7 @@
         "Api-Version": "7",
         "Accept-Language": "de",
         "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
-        "Request-Id": "|687e4b92-4753c2e492e9275b.8."
+        "Request-Id": "|281fb492-4c5bdc594fc99df0.8."
       },
       "ContentHeaders": {},
       "Body": ""
@@ -646,8 +646,8 @@
       },
       "ResponseHeaders": {
         "Vary": "Accept-Encoding",
-        "X-Cloud-Trace-Context": "35be71b368ae9597a256e088147f0dd0",
-        "Date": "Sun, 27 Sep 2020 18:50:51 GMT",
+        "X-Cloud-Trace-Context": "cc1fd9231830fd3296bd450a7386b312",
+        "Date": "Mon, 28 Sep 2020 04:59:47 GMT",
         "Server": "Google,Frontend"
       },
       "ContentHeaders": {
@@ -657,7 +657,7 @@
       "Body": "[{\"artikelID\":101347500000,\"menge\":2},{\"artikelID\":101410100000,\"menge\":2},{\"artikelID\":101582200000,\"menge\":1},{\"artikelID\":103011000000,\"menge\":1},{\"artikelID\":109038400000,\"menge\":1},{\"artikelID\":109310600000,\"menge\":4},{\"artikelID\":109310900000,\"menge\":4},{\"artikelID\":130312500000,\"menge\":1},{\"artikelID\":130815300000,\"menge\":1},{\"artikelID\":166001100000,\"menge\":3},{\"artikelID\":196041401200,\"menge\":1},{\"artikelID\":204240600000,\"menge\":1},{\"artikelID\":204512200000,\"menge\":4},{\"artikelID\":210134100000,\"menge\":1},{\"artikelID\":210134200000,\"menge\":1},{\"artikelID\":212430100000,\"menge\":1},{\"artikelID\":220651518000,\"menge\":0.179},{\"artikelID\":220654030011,\"menge\":0.866},{\"artikelID\":220658200010,\"menge\":0.29},{\"artikelID\":235300100000,\"menge\":0.042},{\"artikelID\":238936300000,\"menge\":1},{\"artikelID\":263405501000,\"menge\":0.431},{\"artikelID\":264400613200,\"menge\":2},{\"artikelID\":264802101000,\"menge\":0.457},{\"artikelID\":270601202300,\"menge\":1},{\"artikelID\":271500513200,\"menge\":1},{\"artikelID\":271709002400,\"menge\":1},{\"artikelID\":274502501000,\"menge\":0.705},{\"artikelID\":276501508400,\"menge\":1},{\"artikelID\":276600513200,\"menge\":3},{\"artikelID\":277104708500,\"menge\":1},{\"artikelID\":520606600000,\"menge\":1},{\"artikelID\":525087500000,\"menge\":1},{\"artikelID\":526226700000,\"menge\":1},{\"artikelID\":526267000000,\"menge\":1},{\"artikelID\":526778800000,\"menge\":1},{\"artikelID\":702906000000,\"menge\":1},{\"artikelID\":702935200060,\"menge\":1},{\"artikelID\":707606800000,\"menge\":1}]\n",
       "HttpVersion": "1.1"
     },
-    "RecordedAt": "2020-09-27T20:50:51.38256+02:00"
+    "RecordedAt": "2020-09-28T06:59:47.813776+02:00"
   },
   {
     "Request": {
@@ -667,7 +667,7 @@
         "Api-Version": "7",
         "Accept-Language": "de",
         "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
-        "Request-Id": "|687e4b92-4753c2e492e9275b.10."
+        "Request-Id": "|281fb492-4c5bdc594fc99df0.10."
       },
       "ContentHeaders": {},
       "Body": ""
@@ -679,8 +679,8 @@
       },
       "ResponseHeaders": {
         "Vary": "Accept-Encoding",
-        "X-Cloud-Trace-Context": "37b993be7ff6c7beee4a2c2b0567a571",
-        "Date": "Sun, 27 Sep 2020 18:50:53 GMT",
+        "X-Cloud-Trace-Context": "043566f09925852a62119fbd8364abda",
+        "Date": "Mon, 28 Sep 2020 04:59:49 GMT",
         "Server": "Google,Frontend"
       },
       "ContentHeaders": {
@@ -690,7 +690,7 @@
       "Body": "[{\"artikelID\":101347500000,\"menge\":2},{\"artikelID\":103011000000,\"menge\":1},{\"artikelID\":109310600000,\"menge\":4},{\"artikelID\":109310900000,\"menge\":4},{\"artikelID\":109311200000,\"menge\":4},{\"artikelID\":109311300000,\"menge\":4},{\"artikelID\":109311800000,\"menge\":4},{\"artikelID\":109316000000,\"menge\":2},{\"artikelID\":120219900000,\"menge\":2},{\"artikelID\":130536100000,\"menge\":1},{\"artikelID\":130815300000,\"menge\":1},{\"artikelID\":130912600000,\"menge\":1},{\"artikelID\":166001100000,\"menge\":5},{\"artikelID\":204105200000,\"menge\":1},{\"artikelID\":204512200000,\"menge\":4},{\"artikelID\":205301900000,\"menge\":1},{\"artikelID\":210134100000,\"menge\":1},{\"artikelID\":212430100000,\"menge\":3},{\"artikelID\":220424001000,\"menge\":0.218},{\"artikelID\":220651510010,\"menge\":0.221},{\"artikelID\":220658200010,\"menge\":0.29},{\"artikelID\":227250012300,\"menge\":0.21},{\"artikelID\":260206101000,\"menge\":1},{\"artikelID\":263400801000,\"menge\":0.744},{\"artikelID\":264200301000,\"menge\":0.827},{\"artikelID\":270601202300,\"menge\":1},{\"artikelID\":271413502300,\"menge\":1},{\"artikelID\":271500513200,\"menge\":2},{\"artikelID\":271709002400,\"menge\":1},{\"artikelID\":274502501000,\"menge\":0.705},{\"artikelID\":276600513200,\"menge\":1},{\"artikelID\":511602800000,\"menge\":1},{\"artikelID\":511635100000,\"menge\":1},{\"artikelID\":514146500000,\"menge\":1},{\"artikelID\":523893600000,\"menge\":1},{\"artikelID\":525087500000,\"menge\":1},{\"artikelID\":526226700000,\"menge\":2},{\"artikelID\":526782900000,\"menge\":1},{\"artikelID\":720317700000,\"menge\":1}]\n",
       "HttpVersion": "1.1"
     },
-    "RecordedAt": "2020-09-27T20:50:52.923914+02:00"
+    "RecordedAt": "2020-09-28T06:59:49.933199+02:00"
   },
   {
     "Request": {
@@ -700,7 +700,7 @@
         "Api-Version": "7",
         "Accept-Language": "de",
         "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
-        "Request-Id": "|687e4b92-4753c2e492e9275b.12."
+        "Request-Id": "|281fb492-4c5bdc594fc99df0.12."
       },
       "ContentHeaders": {},
       "Body": ""
@@ -712,8 +712,8 @@
       },
       "ResponseHeaders": {
         "Vary": "Accept-Encoding",
-        "X-Cloud-Trace-Context": "34b4296ddb1c21930eaa7ffab5bffa31",
-        "Date": "Sun, 27 Sep 2020 18:50:54 GMT",
+        "X-Cloud-Trace-Context": "6f9cf9741fc3c7a65d1b1be717ed1046;o=1",
+        "Date": "Mon, 28 Sep 2020 04:59:51 GMT",
         "Server": "Google,Frontend"
       },
       "ContentHeaders": {
@@ -723,7 +723,7 @@
       "Body": "[{\"artikelID\":101582200000,\"menge\":1},{\"artikelID\":101958100000,\"menge\":2},{\"artikelID\":111945700000,\"menge\":1},{\"artikelID\":120271500000,\"menge\":1},{\"artikelID\":130312500000,\"menge\":1},{\"artikelID\":164004200000,\"menge\":1},{\"artikelID\":166002100000,\"menge\":2},{\"artikelID\":196041401200,\"menge\":3},{\"artikelID\":200616700000,\"menge\":1},{\"artikelID\":204450000000,\"menge\":1},{\"artikelID\":204512200000,\"menge\":4},{\"artikelID\":205214100000,\"menge\":1},{\"artikelID\":205245000000,\"menge\":2},{\"artikelID\":212430300000,\"menge\":2},{\"artikelID\":220651518000,\"menge\":0.186},{\"artikelID\":220658200010,\"menge\":0.212},{\"artikelID\":227220040400,\"menge\":1},{\"artikelID\":260206104100,\"menge\":0.907},{\"artikelID\":263404701000,\"menge\":0.533},{\"artikelID\":264400613200,\"menge\":2},{\"artikelID\":264802101000,\"menge\":0.429},{\"artikelID\":270601202300,\"menge\":1},{\"artikelID\":271500513200,\"menge\":2},{\"artikelID\":271708502100,\"menge\":0.782},{\"artikelID\":271709002400,\"menge\":1},{\"artikelID\":274502501000,\"menge\":0.455},{\"artikelID\":275600702100,\"menge\":0.389},{\"artikelID\":276600513200,\"menge\":2},{\"artikelID\":525032000000,\"menge\":2}]\n",
       "HttpVersion": "1.1"
     },
-    "RecordedAt": "2020-09-27T20:50:54.627388+02:00"
+    "RecordedAt": "2020-09-28T06:59:52.021257+02:00"
   },
   {
     "Request": {
@@ -733,7 +733,7 @@
         "Api-Version": "7",
         "Accept-Language": "de",
         "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
-        "Request-Id": "|687e4b92-4753c2e492e9275b.14."
+        "Request-Id": "|281fb492-4c5bdc594fc99df0.14."
       },
       "ContentHeaders": {},
       "Body": ""
@@ -745,8 +745,8 @@
       },
       "ResponseHeaders": {
         "Vary": "Accept-Encoding",
-        "X-Cloud-Trace-Context": "10ddcc52e92d4ac777f6046bd2b1fe66",
-        "Date": "Sun, 27 Sep 2020 18:50:56 GMT",
+        "X-Cloud-Trace-Context": "0e1d257a2fe17f47321624464afcfebd",
+        "Date": "Mon, 28 Sep 2020 04:59:53 GMT",
         "Server": "Google,Frontend"
       },
       "ContentHeaders": {
@@ -756,7 +756,7 @@
       "Body": "[{\"artikelID\":101582200000,\"menge\":1},{\"artikelID\":130311400000,\"menge\":1},{\"artikelID\":130532400000,\"menge\":1},{\"artikelID\":157272100000,\"menge\":1},{\"artikelID\":164004200000,\"menge\":2},{\"artikelID\":166002100000,\"menge\":2},{\"artikelID\":196041401200,\"menge\":2},{\"artikelID\":204015600000,\"menge\":1},{\"artikelID\":204240600000,\"menge\":1},{\"artikelID\":204512200000,\"menge\":6},{\"artikelID\":212430300000,\"menge\":2},{\"artikelID\":220658200010,\"menge\":0.436},{\"artikelID\":227220040400,\"menge\":2},{\"artikelID\":227250012300,\"menge\":0.225},{\"artikelID\":263404701000,\"menge\":0.576},{\"artikelID\":264200301000,\"menge\":0.788},{\"artikelID\":264802101000,\"menge\":0.418},{\"artikelID\":270601202300,\"menge\":1},{\"artikelID\":271500513200,\"menge\":1},{\"artikelID\":271709002400,\"menge\":1},{\"artikelID\":514907500000,\"menge\":1},{\"artikelID\":520606600000,\"menge\":2},{\"artikelID\":526075600000,\"menge\":1},{\"artikelID\":526226700000,\"menge\":1},{\"artikelID\":703295100000,\"menge\":1},{\"artikelID\":703524000000,\"menge\":1},{\"artikelID\":718000800000,\"menge\":1},{\"artikelID\":747641590000,\"menge\":3}]\n",
       "HttpVersion": "1.1"
     },
-    "RecordedAt": "2020-09-27T20:50:56.134384+02:00"
+    "RecordedAt": "2020-09-28T06:59:54.216688+02:00"
   },
   {
     "Request": {
@@ -766,7 +766,7 @@
         "Api-Version": "7",
         "Accept-Language": "de",
         "Authorization": "Basic aGFja3p1cmljaDIwMjA6dWhTeUowOEtleEtuNFpGUw==",
-        "Request-Id": "|687e4b92-4753c2e492e9275b.16."
+        "Request-Id": "|281fb492-4c5bdc594fc99df0.16."
       },
       "ContentHeaders": {},
       "Body": ""
@@ -778,8 +778,8 @@
       },
       "ResponseHeaders": {
         "Vary": "Accept-Encoding",
-        "X-Cloud-Trace-Context": "acbc76e58a93f0912080ad3e7ed20eb0",
-        "Date": "Sun, 27 Sep 2020 18:50:57 GMT",
+        "X-Cloud-Trace-Context": "359f5814bcaa40614a6cdfcea8434e38",
+        "Date": "Mon, 28 Sep 2020 04:59:55 GMT",
         "Server": "Google,Frontend"
       },
       "ContentHeaders": {
@@ -789,7 +789,7 @@
       "Body": "[{\"artikelID\":101402800000,\"menge\":1},{\"artikelID\":101410100000,\"menge\":1},{\"artikelID\":101582200000,\"menge\":2},{\"artikelID\":109038600000,\"menge\":1},{\"artikelID\":109064300000,\"menge\":2},{\"artikelID\":109311300000,\"menge\":4},{\"artikelID\":109311800000,\"menge\":4},{\"artikelID\":111913900000,\"menge\":1},{\"artikelID\":111945700000,\"menge\":1},{\"artikelID\":130312100000,\"menge\":1},{\"artikelID\":130535000000,\"menge\":1},{\"artikelID\":130908600000,\"menge\":1},{\"artikelID\":130911600000,\"menge\":1},{\"artikelID\":157272100000,\"menge\":1},{\"artikelID\":166010000000,\"menge\":1},{\"artikelID\":200616700000,\"menge\":1},{\"artikelID\":204015600000,\"menge\":1},{\"artikelID\":204031000000,\"menge\":2},{\"artikelID\":204512200000,\"menge\":4},{\"artikelID\":212430300000,\"menge\":3},{\"artikelID\":220654030011,\"menge\":0.929},{\"artikelID\":220658200010,\"menge\":0.494},{\"artikelID\":221966270000,\"menge\":1},{\"artikelID\":238936300000,\"menge\":2},{\"artikelID\":243996125000,\"menge\":2},{\"artikelID\":263404701000,\"menge\":0.326},{\"artikelID\":264200301000,\"menge\":0.654},{\"artikelID\":264400613200,\"menge\":2},{\"artikelID\":265200502400,\"menge\":1},{\"artikelID\":270601202300,\"menge\":1},{\"artikelID\":271413502300,\"menge\":1},{\"artikelID\":271500513200,\"menge\":2},{\"artikelID\":271709002400,\"menge\":1},{\"artikelID\":274502501000,\"menge\":0.705},{\"artikelID\":275700501000,\"menge\":0.821},{\"artikelID\":276600513200,\"menge\":2},{\"artikelID\":277107901000,\"menge\":0.5},{\"artikelID\":511065800000,\"menge\":2},{\"artikelID\":511716800000,\"menge\":1},{\"artikelID\":512510200000,\"menge\":3},{\"artikelID\":520606600000,\"menge\":2}]\n",
       "HttpVersion": "1.1"
     },
-    "RecordedAt": "2020-09-27T20:50:57.389733+02:00"
+    "RecordedAt": "2020-09-28T06:59:56.612194+02:00"
   },
   {
     "Request": {

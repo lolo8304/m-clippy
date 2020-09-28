@@ -57,7 +57,7 @@ namespace m_clippy
 
         public static ScotchMode GetScotchMode()
         {
-            // return ScotchMode.Recording;
+            //return ScotchMode.Recording;
             return ScotchMode.Replaying;
         }
 
