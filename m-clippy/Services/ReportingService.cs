@@ -27,16 +27,8 @@ namespace m_clippy.Services
             var migrosPassword = configuration["MigrosApiPassword"];
 
             // https://github.com/mleech/scotch
-            try
-            {
-                var httpClient = HttpClients.NewHttpClient($"./cassette/{fileNameCache}.json", Startup.GetScotchMode());
-                return await GetResultFromHttpClientAsync<T>(url, migrosUserName, migrosPassword, httpClient);
-            }
-            catch (Exception e)
-            {
-                var httpClient = HttpClients.NewHttpClient($"./cassette/{fileNameCache}.json", Startup.GetScotchModeForceRecording());
-                return await GetResultFromHttpClientAsync<T>(url, migrosUserName, migrosPassword, httpClient);
-            }
+            var httpClient = HttpClients.NewHttpClient($"./cassette/{fileNameCache}.json", Startup.GetScotchMode());
+            return await GetResultFromHttpClientAsync<T>(url, migrosUserName, migrosPassword, httpClient);
         }
 
         private static async Task<T> GetResultFromHttpClientAsync<T>(string url, string migrosUserName, string migrosPassword, HttpClient httpClient)
