@@ -26,16 +26,21 @@ namespace m_clippy.Controllers
             _scanningService = scanningService;
         }
 
-        [HttpGet]
-        [Route("purchases/{userId}")]
-        public async Task<IActionResult> GetPurchase(string eanCode, string userId)
+        [HttpPost]
+        [Route("purchase/{userId}/{articleId}")]
+        public async Task<IActionResult> GetPurchase(string userId, string articleId)
         {
-            if (string.IsNullOrWhiteSpace(eanCode))
+            if (string.IsNullOrWhiteSpace(articleId))
             {
-                return BadRequest(new Error($"{StatusCodes.Status400BadRequest}", $"'{nameof(eanCode)}' cannot be null or whitespace"));
+                return BadRequest(new Error($"{StatusCodes.Status400BadRequest}", $"'{nameof(articleId)}' cannot be null or whitespace"));
             }
+            if (string.IsNullOrWhiteSpace(userId))
+            {
+                return BadRequest(new Error($"{StatusCodes.Status400BadRequest}", $"'{nameof(userId)}' cannot be null or whitespace"));
+            }
+            
 
-            var clippyProductsDetails = await _scanningService.GetProductDetails(userId, eanCode);
+            var clippyProductsDetails = await _scanningService.GetProductDetails(userId, articleId);
 
             var clippyProductsDetailsString = JsonConvert.SerializeObject(clippyProductsDetails);
             Response.StatusCode = (int)HttpStatusCode.OK;
