@@ -50,7 +50,7 @@ namespace m_clippy.Services
             var user = _clippyStorage.GetUser(userId);
             if (user == null)
             {
-                user = new Mocks().User1();
+                user = new Mocks().GetMockUserById(userId);
                 user = _clippyStorage.PutUser(userId, user);
             }
             
