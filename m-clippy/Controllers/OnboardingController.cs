@@ -38,7 +38,7 @@ namespace m_clippy.Controllers
 
             if (user == null)
             {
-                user = new Mocks().User1();
+                user = new Mocks().GetMockUserById(userId);
                 user = _clippyStorage.PutUser(userId, user);
             }
 

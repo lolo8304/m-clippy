@@ -57,8 +57,12 @@ namespace m_clippy
 
         public static ScotchMode GetScotchMode()
         {
-            // return ScotchMode.Recording;
+            //return ScotchMode.Recording;
             return ScotchMode.Replaying;
+        }
+        public static ScotchMode GetScotchModeForceRecording()
+        {
+            return ScotchMode.Recording;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
